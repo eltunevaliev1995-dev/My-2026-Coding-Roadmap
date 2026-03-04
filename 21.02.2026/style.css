@@ -1,0 +1,345 @@
+/*
+  Select the body and change background 
+  body {
+
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+  }
+
+   Select the main heading 
+  h1 {
+
+            color: darkblue;
+            text-align: center;
+
+  }
+
+
+   Select a class (we will add this class to HTML) 
+  .highlight {
+
+            color: red;
+            font-weight: bold;
+  }
+*/
+
+
+/* 
+Global box-sizing rule - Qlobal box-sizing qaydası
+* {
+  Apply border-box to all elements - Bütün elementlərə border-box tətbiq olunur
+  box-sizing: border-box;
+}
+
+Body styling - Body üslubu
+body {
+  Set global font to Poppins - Qlobal font Poppins olaraq təyin edilir
+  font-family: 'Poppins', sans-serif;
+
+  Light grey background - Açıq boz arxa fon
+  background-color: #f0f2f5;
+
+  Dark text color - Tünd mətn rəngi
+  color: #1c1e21;
+}
+
+Navigation menu styling - Naviqasiya menyusu üslubu
+nav ul {
+  Remove list dots - Siyahı nöqtələrini silir
+  list-style-type: none;
+
+  Dark GitHub-style background - GitHub tərzində tünd arxa fon
+  background-color: #24292e;
+
+  Inner spacing - Daxili boşluq
+  padding: 10px;
+
+  Center align menu - Menyunu ortalayır
+  text-align: center;
+}
+
+nav ul li {
+  Display items horizontally - Elementləri üfüqi göstərir
+  display: inline;
+
+  Space between items - Elementlər arasında boşluq
+  margin-right: 20px;
+}
+
+nav ul li a {
+  White link color - Link rəngi ağ
+  color: #ffff;
+
+  Remove underline - Alt xətti silir
+  text-decoration: none;
+
+  Bold text - Qalın mətn
+  font-weight: bold;
+}
+
+Hover effect for links - Linklər üçün hover effekti
+nav ul li a:hover {
+  Turns blue on hover - Hover zamanı mavi olur
+  color: #007bff;
+}
+
+Section card styling - Bölmələri kart kimi üslublama
+section {
+  White background - Ağ arxa fon
+  background-color: #ffff;
+
+  70% width - 70% en
+  width: 70%;
+
+  Center with margin - Ortalanmış margin
+  margin: 40px auto;
+
+  Inner padding - Daxili boşluq
+  padding: 30px;
+
+  Light grey border - Açıq boz sərhəd
+  border: 1px solid #dddd;
+
+  Rounded corners - Yuvarlaq künclər
+  border-radius: 12px;
+
+  Subtle shadow for lifted look - Kartı qaldırılmış kimi göstərən kölgə
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+*/
+
+
+/*
+
+
+
+
+.flex-container {
+
+  display: flex; Flex-i aktiv et
+  justify-content: space-around; Aralarında boşluq qoy
+  align-items: center; Şaquli mərkəzlə
+  background-color: lightgray;
+  height: 200px;
+
+}
+
+
+.box {
+
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 20px;
+
+}
+
+
+
+*/
+
+ /* Default style for Desktop (Masaüstü üçün standart stil) */
+ .flex-container {
+  display: flex;
+  flex-direction: row; /* Side by side (Yan-yana) */
+}
+
+.box {
+  padding: 20px;
+  border: 1px solid white;
+}
+
+/*  Specific styling for items */
+.box-1 {
+  flex: 1;
+  background-color: #ff5733;
+}
+
+.box-2 {
+  flex: 2;
+  background-color: #33ff57; /* Grows twice as much ! */
+}
+
+
+.box-3 {
+  flex: 1;
+  background-color: #3357ff;
+}  
+
+
+/*
+
+     .navbar {
+       display: flex;
+       justify-content: space-between;
+       Logo left,
+       Links right align-items: center;
+       Vertical center padding: 20px 50px;
+       background-color: #2c3e50;
+       color: #fff;
+     }
+
+*/
+
+
+.nav-links{
+
+  display:flex; /* Make the <ul>also a flex container */
+  list-style: none; /* Remove dots */
+}
+
+.nav-links li{
+
+  margin-left: 20px; /* Space between links */
+
+}
+
+.nav-links  a {
+
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+
+} 
+
+
+.logo {
+
+  color: #fff;
+  font-size: 1.4em;
+}
+
+/* Media Query for Mobile (Mobil üçün media sorğusu) */
+@media (max-width: 600px) {
+
+  .flex-container {
+
+    flex-direction: column; /* Stacked vertically (Alt-alta) */
+  }
+
+    .navbar {
+      padding: 10px;
+      /* Smaller padding on mobile */
+    }
+  
+}
+
+/* 1. Basic Styles for Mobile (Mobil üçün təməl stillər) */
+.navbar {
+  background-color:#008080 ;
+  flex-direction: column; /* Links go under the logo (Linklər loqonun altına düşür) */
+  align-items: center;
+  text-align: center;
+}
+
+
+.nav-links {
+  display: flex;
+  flex-direction: column; /* Vertical links (Şaquli linklər) */
+  padding: 0;
+} 
+
+
+
+/* 2. Media Query for Desktop (Masaüstü üçün media sorğusu) */
+/* If the screen is wider than 768px (Əgər ekran 768px-dən böyükdürsə) */
+@media (min-width:768px) {
+
+    .navbar {
+
+        flex-direction: row; /* Logo left, Links right (Loqo solda, linklər sağda) */
+        justify-content: space-between;
+    }
+
+    .nav-links {
+
+        flex-direction: row; /* Horizontal links (Üfüqi linklər) */
+    }
+
+    .nav-links li {
+
+        margin-left: 20px;
+    }
+  
+}
+
+
+.hero {
+
+  height: 60vh; /* 60% of viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(hero-bg.jpg);
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+
+.btn{
+
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color:#fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: 0.3s; /* Smooth effect */
+}
+
+
+.btn:hover {
+
+   background-color: #c0392b;
+}
+
+
+.project-container {
+
+     display: flex;
+     flex-wrap: wrap; /* Allows cards to move to next line */
+     align-items: center;
+     padding: 50px 20px;
+     background-color: #f4f4f4;
+}
+
+.project-card{
+  background-color: #fff;
+  width: 300px;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+/* Hover effect: The card lifts up */
+.project-card:hover {
+
+   transform: translateY(-10px);
+   cursor: pointer;
+}
+
+
+.footer {
+    
+    background-color: #24292e;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+
+.socials a {
+
+  color: #e74c3c;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
