@@ -1,0 +1,222 @@
+/* 1. Variables - Color palette for modern UI */
+/* 1. Dəyişənlər - Müasir interfeys üçün rəng palitrası */
+:root {
+
+    --primary-bg: #0f172a; /* EN: Dark night blue background / AZ: Tünd gecə mavisi fon */
+    --card-bg: #1e293b; /* EN: Card background / AZ: Kartın fonu */
+    --accent: #38bdf8; /* EN: Bright blue accent / AZ: Parlaq mavi vurğu */
+    --accent-glow: rgba(56, 189, 248, 0.3); /* EN: Glow effect / AZ: Parıltı effekti */
+    --success: #4ade80; /* EN: Neon green for success / AZ: Neon yaşıl uğur üçün */
+    --danger: #f87171; /* EN: Soft red for danger / AZ: Yumşaq qırmızı xəbərdarlıq üçün */
+    --text-main: #f8fafc; /* EN: Main text color / AZ: Əsas mətn rəngi */
+    --text-muted: #94a3b8; /* EN: Secondary text color / AZ: İkinci dərəcəli mətn rəngi */
+}
+
+
+/* 2. Reset and Base styles */
+/* 2. Reset və Təməl üslublar */
+* {
+
+      margin: 0; /* EN: Remove default margin / AZ: Default margin silinir */
+      padding: 0; /* EN: Remove default padding / AZ: Default padding silinir */
+      box-sizing: border-box; /* EN: Consistent sizing / AZ: Ölçülərin sabitliyi */
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; /* EN: Modern fonts / AZ: Müasir şriftlər */
+}
+
+
+
+body {
+ 
+    background-color: var(--primary-bg); /* EN: Dark background / AZ: Tünd fon */
+    background-image: radial-gradient(circle at top right #1e293b, #0f172a); /* EN: Gradient effect / AZ: Gradient effekti */
+    height: 100vh; /* EN: Full viewport height / AZ: Tam ekran hündürlüyü */
+    display: flex; /* EN: Flexbox layout / AZ: Flexbox düzülüşü */
+    justify-content: center; /* EN: Center horizontally / AZ: Üfüqi mərkəzləşdirir */
+    align-items: center; /* EN: Center vertically / AZ: Şaquli mərkəzləşdirir */
+    color: var(--text-main); /* EN: Main text color / AZ: Əsas mətn rəngi */
+}
+
+
+/* 3. Real App Card Design */
+/* 3. Real App Kart Dizaynı */
+.budget-card {
+
+   background: var(--card-bg); /* EN: Card background / AZ: Kart fonu */
+   width: 100%; /* EN: Full width / AZ: Tam en */
+   max-width: 400px; /* EN: Full width / AZ: Tam en */
+   padding: 2rem; /* EN: Inner spacing / AZ: Daxili boşluq */
+   border-radius: 28px; /* EN: Rounded corners / AZ: Yumru künclər */
+   border: 1px solid rgba(255, 255, 255, 0.05); /* EN: Subtle border / AZ: Yumşaq çərçivə */
+   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); /* EN: Deep shadow / AZ: Dərin kölgə */
+   position: relative; /* EN: Positioning / AZ: Mövqeləndirmə */
+   overflow: hidden; /* EN: Hide overflow / AZ: Artıqları gizlədir */
+   transition: transform 5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* EN: Smooth animation / AZ: Yumşaq animasiya */
+          
+}
+
+
+/* EN: Hover effect for card / AZ: Kart üzərində hover effekti */
+.budget-card:hover {
+
+   transform: scale(1.02); /* EN: Slight zoom / AZ: Yüngül böyümə */
+   border-color: rgba(56, 189, 248, 0.2); /* EN: Accent border / AZ: Vurğu çərçivəsi */
+   cursor: pointer;
+}
+
+
+/* 4. Headings and Icons */
+/* 4. Başlıq və İkonlar */
+h2 {
+  
+    font-size: 1.5rem; /* EN: Large heading / AZ: Böyük başlıq */
+    font-weight: 700; /* EN: Bold text / AZ: Qalın mətn */
+    margin-bottom:1.5rem; /* EN: Space below / AZ: Aşağı boşluq */
+    display: flex; /* EN: Flex layout / AZ: Flex düzülüşü */
+    align-items: center; /* EN: Align vertically / AZ: Şaquli düzülüş */
+    gap: 12px; /* EN: Space between items / AZ: Elementlər arasında boşluq */
+    color: var(--text-main); /* EN: Main text color / AZ: Əsas mətn rəngi */
+}
+
+
+h2 i {
+
+   color: var(--accent); /* EN: Accent color / AZ: Vurğu rəngi */
+   filter:drop-shadow(0 0 8px var(--accent-glow)); /* EN: Glow effect / AZ: Parıltı effekti */
+}
+
+
+
+/* 5. Input Fields */
+/* 5. İnput Sahələri */
+.input-section {
+
+   margin-bottom:1.25rem; /* EN: Space below / AZ: Aşağı boşluq */
+
+}
+
+
+label {
+ 
+   font-size: 0.85rem; /* EN: Small text / AZ: Kiçik mətn */
+   color: var(--text-muted); /* EN: Muted color / AZ: Solğun rəng */
+   margin-left: 4px; /* EN: Left spacing / AZ: Sol boşluq */
+   margin-bottom: 10px; /* EN: Space below / AZ: Aşağı boşluq */
+   display: block; /* EN: Block element / AZ: Blok element */
+   font-weight: 500; /* EN: Medium weight / AZ: Orta qalınlıq */
+}
+
+
+input {
+
+    width: 100%; /* EN: Full width / AZ: Tam en */
+    background: rgba(15, 23, 42, 0.6); /* EN: Semi-transparent background / AZ: Yarı şəffaf fon */
+    border: 1px solid #334155; /* EN: Border color / AZ: Çərçivə rəngi */
+    padding: 14px 18px; /* EN: Inner spacing / AZ: Daxili boşluq */
+    border-radius: 16px; /* EN: Rounded corners / AZ: Yumru künclər */
+    color: var(--text-main); /* EN: Text color / AZ: Mətn rəngi */
+    font-size: 1rem; /* EN: Normal size / AZ: Normal ölçü */
+    transition: 0.3s all ease; /* EN: Smooth transition / AZ: Yumşaq keçid */
+    margin-bottom: 10px; /* EN: Space below / AZ: Aşağı boşluq */
+} 
+
+
+input:focus {
+
+    outline: none; /* EN: Remove outline / AZ: Konturu silir */
+    border-color: var(--accent); /* EN: Accent border / AZ: Vurğu çərçivəsi */
+    background: rgba(15, 23, 42, 0.8); /* EN: Darker background / AZ: Daha tünd fon */
+    box-shadow: 0 0 0 4px var(--accent-glow); /* EN: Glow effect / AZ: Parıltı effekti */
+}
+
+
+/* 6. Modern Action Button */
+/* 6. Müasir Action Düyməsi */
+button {
+  
+     width: 100%;/* EN: Full width / AZ: Tam en */
+     background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%); /* EN: Gradient background / AZ: Gradient fon */
+     color: var(--text-main);/* EN: White text / AZ: Ağ mətn */
+     border: none; /* EN: No border / AZ: Çərçivəsiz */
+     padding: 16px; /* EN: Inner spacing / AZ: Daxili boşluq */
+     border-radius: 16px; /* EN: Rounded corners / AZ: Yumru künclər */
+     font-size: 1rem; /* EN: Normal size / AZ: Normal ölçü */
+     font-weight: 700; /* EN: Bold text / AZ: Qalın mətn */
+     cursor: pointer; /* EN: Pointer cursor / AZ: İstifadəçi göstəricisi */
+     display: flex; /* EN: Flex layout / AZ: Flex düzülüşü */
+     justify-content: center; /* EN: Center content / AZ: Məzmunu mərkəzləşdirir */
+     align-items: center; /* EN: Align vertically / AZ: Şaquli düzülüş */
+     gap: 10px; /* EN: Space between icon and text / AZ: İkon və mətn arasında boşluq */
+     transition: 0.3s; /* EN: Smooth hover effect / AZ: Yumşaq hover effekti */
+     box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.3); /* EN: Shadow effect / AZ: Kölgə effekti */
+     margin-bottom: 10px; /* EN: Space below / AZ: Aşağı boşluq */
+}  
+
+
+
+button:hover {
+
+    filter: brightness(1.1); /* EN: Slightly brighter / AZ: Bir az daha parlaq */
+    transform: translateY(-2px); /* EN: Lift effect / AZ: Qalxma effekti */
+    box-shadow: 0 20px 25px -5px rgba(2, 132, 199, 0.4); /* EN: Stronger shadow / AZ: Daha güclü kölgə */
+}
+
+
+
+button:active {
+   
+    transform: scale(0.98); /* EN: Press effect / AZ: Basılma effekti */
+
+}
+
+
+/*   Reset button with icon */
+.reset-btn {
+
+    width: 100%;
+    background: darkred;  
+    transition: background 3s , box-shadow;       
+}
+
+
+.reset-btn:hover {
+          filter: brightness(1.1);
+          /* EN: Slightly brighter / AZ: Bir az daha parlaq */
+          background-color: red;
+          /* EN: Background turns red / AZ: Fon qırmızı olur */
+          box-shadow: 0 6px 12px rgba(255, 0, 0, 0.5);
+          /* EN: Red shadow with 50% opacity / AZ: Qırmızı kölgə, 50% şəffaflıq */
+}
+
+
+/* 7. Dynamic Result Box */
+/* 7. Dinamik Nəticə Qutusu */
+.result-box {
+
+    margin-top: 2rem; /* EN: Space above / AZ: Yuxarı boşluq */
+    padding: 1.25rem; /* EN: Inner spacing / AZ: Daxili boşluq */
+    background: rgba(15, 23, 42, 0.4 ); /* EN: Semi-transparent background / AZ: Yarı şəffaf fon */
+    border-radius: 18px; /* EN: Rounded corners / AZ: Yumru künclər */
+    text-align: center; /* EN: Center text / AZ: Mətni mərkəzləşdirir */
+    font-size: 0.95rem; /* EN: Readable size / AZ: Oxunaqlı ölçü */
+    border: 1px dashed #334155; /* EN: Dashed border / AZ: Xətli çərçivə */
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* EN: Smooth animation / AZ: Yumşaq animasiya */
+} 
+
+
+/* EN: Success state styling / AZ: Uğurlu vəziyyət dizaynı */
+.success {
+
+    border: 1px solid var(--success); /* EN: Green border / AZ: Yaşıl çərçivə */
+    background: rgba(74, 222, 128, 0.05); /* EN: Light green background / AZ: Açıq yaşıl fon */
+    color: var(--success); /* EN: Green text / AZ: Yaşıl mətn */
+}
+
+
+/* EN: Danger state styling / AZ: Təhlükə vəziyyəti dizaynı */
+.danger {
+
+    border: 1px solid var(--danger); /* EN: Red border / AZ: Qırmızı çərçivə */
+    background: rgba(248, 113, 113, 0.05); /* EN: Light red background / AZ: Açıq qırmızı fon */
+    color: var(--danger); /* EN: Red text / AZ: Qırmızı mətn */
+
+}
