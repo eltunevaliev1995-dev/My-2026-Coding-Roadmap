@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Online Market</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+       
+       <header>
+
+            <div>
+              
+                <h1>Tech Online Market</h1>
+                <p>Array and For Loop Project</p>
+
+            </div>
+
+            <button id="cart-btn" onclick="scrollToCart()">
+ 
+                 🛒 Basket <span id="cart-count">0</span> Product
+
+            </button>
+    
+
+       </header>
+
+       <main class="container"> 
+
+
+            <!-- Statistika kartları — JS tərəfindən doldurulur -->
+            <div class="stats-row" id="stats-row"></div>
+
+            <!-- Axtarış + filterlər -->
+            <div class="search-section">
+
+                <input type="text" id="search-input" placeholder="Search Product...."  oninput="renderAll()" /> 
+                <div class="filter-buttons" id="filter-buttons"></div>
+
+            </div>
+
+
+            <!-- Məhsul kartları — JS tərəfindən doldurulur -->
+            <div class="products-grid" id="products-grid"></div>
+
+            <!-- Basket --->
+            <section class="cart-section" id="cart-section">
+
+                <h2>🛒 Shopping basket</h2>
+                <div id="cart-list">The basket is empty.</div>
+
+
+            </section>
+
+
+
+       </main>
+
+
+
+
+<script src="script.js"></script>   
+</body>
+</html>
