@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💰 CashFlow Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app"> <!-- App baslangici -->
+
+        <div class="header"> <!-- Header Baslanginci -->
+            <div class="logo"> <!-- Logo Baslanginci -->
+                <span class="logo-icon">💎</span>
+                <span class="logo-text">Finance</span>
+            </div> <!-- Logo Bitisi -->
+            <h1>CashFlow Tracker</h1>
+            <p>Pulunuzu ağıllı idarə edin</p>
+        </div> <!-- Header Bitisi -->
+
+        <div class="balance-card"> <!-- Balance-card baslanginci -->
+            <div class="balance-label">Ümumi Balans</div>
+            <div class="balance-amount"> <!-- Balance-amount baslangici -->
+
+                <!-- ✅ XETA 3 DÜZƏLDİLDİ — class="total-balance" deyil id="total-balance" olmalıdır -->
+                <span id="total-balance">0.00 $</span>
+
+            </div> <!-- Balance-amount bitisi -->
+
+            <div class="balance-stats"> <!-- Balance-stats Baslangici -->
+                <div class="stat-box income"> <!-- Stat-box income Baslangici -->
+                    <div class="stat-label">↑ Gəlir</div>
+                    <div class="stat-value" id="total-income">0.00 $</div>
+                </div> <!-- Stat-box income Bitisi -->
+
+                <div class="stat-box expense"> <!-- Stat-box expense baslangici -->
+                    <div class="stat-label">↓ Xərc</div>
+                    <div class="stat-value" id="total-expense">0.00 $</div>
+                </div> <!-- Stat-box expense bitisi -->
+            </div> <!-- Balance-stats Bitisi -->
+
+        </div> <!-- Balance-card Bitisi -->
+
+        <!-- ✅ XETA 1 DÜZƏLDİLDİ — input-group-lar add-card-in İÇİNDƏ olmalıdır -->
+        <!-- SƏN: add-card-ı bağladıqdan SONRA input-group-ları yazmışdın -->
+        <div class="add-card"> <!-- add-card baslangici -->
+
+            <h2>Əməliyyat Əlavə Et <span class="tag">YENİ</span></h2>
+
+            <div class="type-toggle"> <!-- type-toggle baslangici -->
+                <button class="type-btn active-income" id="btn-income" onclick="setType('income')">
+                    <i class="fas fa-arrow-up"></i> Gəlir
+                </button>
+                <button class="type-btn active-expense" id="btn-expense" onclick="setType('expense')">
+                    <i class="fas fa-arrow-down"></i> Xərc
+                </button>
+            </div> <!-- type-toggle bitisi -->
+
+            <div class="input-group"> <!-- input-group baslangici -->
+                <label for="desc">Təsvir</label>
+                <div class="input-wrapper"> <!-- input-wrapper baslangici -->
+                    <i class="fas fa-pen icon"></i>
+                    <input type="text" id="desc" placeholder="Məs: Market, Maaş, Kafe...">
+                </div> <!-- input-wrapper bitisi -->
+            </div> <!-- input-group bitisi -->
+
+            <div class="input-group"> <!-- input-group baslangici -->
+                <label for="amount">Məbləğ ($)</label>
+                <div class="input-wrapper"> <!-- input-wrapper baslangici -->
+                    <i class="fas fa-coins icon"></i>
+                    <input type="number" id="amount" placeholder="0.00" step="0.01" min="0">
+                </div> <!-- input-wrapper bitisi -->
+            </div> <!-- input-group bitisi -->
+
+            <!-- ✅ XETA 2 DÜZƏLDİLDİ — add-btn input-group-un XARİCİNDƏ olmalıdır -->
+            <!-- SƏN: add-btn-i input-group-un İÇİNDƏ yazmışdın -->
+            <button class="add-btn" id="add-btn">
+                <i class="fas fa-plus"></i> Əlavə Et
+            </button>
+
+        </div> <!-- add-card bitisi -->
+
+        <div class="history-card"> <!-- history-card baslangici -->
+            <div class="history-header"> <!-- history-header baslangici -->
+                <h2>📋 Tarix</h2>
+                <span class="history-count" id="history-count">0 əməliyyat</span>
+            </div> <!-- history-header bitisi -->
+
+            <div class="empty-state" id="empty-state"> <!-- empty-state baslangici -->
+                <div class="empty-icon">🪙</div>
+                <p>Hələ heç bir əməliyyat yoxdur.<br>Yuxarıdan əlavə edin!</p>
+            </div> <!-- empty-state bitisi -->
+
+            <ul id="history-list"></ul>
+        </div> <!-- history-card bitisi -->
+
+        <div class="toast" id="toast"> <!-- toast baslangici -->
+            <i class="fas fa-check-circle"></i>
+            <span id="toast-msg">Əlavə edildi!</span>
+        </div> <!-- toast bitisi -->
+
+    </div> <!-- App bitisi -->
+
+    <script src="app.js"></script>
+</body>
+
+</html>
