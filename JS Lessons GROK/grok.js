@@ -193,3 +193,271 @@ checkTemperature(26);
 checkTemperature(20);
 checkTemperature(8);
 checkTemperature(15);   // əlavə test
+
+
+let temperature = 28;
+
+if(temperature >= 20 && temperature <= 30){
+
+   console.log("Normal Hava");
+
+} else {
+
+   console.log("Normal Deyil");
+}
+
+
+
+function canEnterClub(age, hasInvitation){
+
+    if(age >= 18 || hasInvitation){
+
+      console.log("Xos Geldiniz!");
+
+    } else {
+
+      console.log("Giris Qadagandir!");
+    }
+}
+
+
+canEnterClub(18, true);
+canEnterClub(17, false);
+canEnterClub(22, false);
+
+
+function isEven(number){
+
+   if(number % 2 === 0){
+
+      console.log(`${number} bu reqem cutdur`);
+
+   } else {
+
+      console.log(`${number} bu reqem tekdir`);
+   }
+}
+
+
+isEven(16);
+isEven(5);
+
+
+
+function checkLogin(username, password){
+
+   if(username === "Eltun" && password === "js123"){
+
+       console.log(`Welcome ${username}`);
+
+   } else {
+      
+      console.log("It is not true");
+   }
+}
+
+
+checkLogin("Eltun","js123");
+checkLogin("Ramal","js125");
+
+
+let fruits = ['Alma', 'Banan', 'Portagal'];
+
+console.log(fruits[0]);
+console.log(fruits.length);
+
+
+let numbers = [10, 20, 30, 40, 50];
+
+console.log("Massiv" , numbers);
+console.log("Element sayi", numbers.length);
+console.log("Birinci Element" , numbers[0]);
+console.log("Son Element", numbers[numbers.length -1]);
+
+
+let colors = ['Qirmizi', 'Yasil', 'Mavi'];
+colors.push("Sari"); // Sona Elave edir.
+colors.unshift("Qara"); // Basa Elave Edir.
+
+console.log(colors);
+
+
+let ages = [15, 22, 17, 30, 19];
+
+ages.forEach(function(age){
+
+   if(age >= 18 ) {
+      
+    console.log(age + " Old");
+
+   } else {
+
+      console.log(age +  " Young");
+   }
+
+});
+
+
+function mySkills() {
+    let skills = ["HTML", "CSS", "JS"];   // array yaradırıq
+    
+    skills.push("React");                  // React əlavə edirik
+    
+    // Hər elementi ayrı-ayrılıqda çap edirik
+    skills.forEach(function(skill) {
+        console.log(`Mən ${skill} bilirəm`);
+    });
+}
+
+mySkills();   // funksiyanı çağırırıq
+
+
+function cars(){
+
+   let carsModel = ['BMW', 'Opel', 'Mercedes'];
+
+   carsModel.push("Nissan");
+
+   carsModel.forEach(function(car){
+    
+      console.log(`Masinlarin hamisi yenidir ${car}`);
+
+   });
+}
+
+cars();
+
+
+function lang(){
+
+  let diller = ['Azerbaycan', 'Turk ', 'Gurcu'];
+
+  diller.push('Ingilis Dili');
+
+  diller.forEach(function(dil){
+   
+     console.log(`Men ${dil} dilini bilirem`);
+
+  });
+
+}
+
+lang();
+
+
+let numbersOne = [10, 20, 30, 40];
+
+for(let i = 0; i < numbersOne.length; i++ ){
+  
+   console.log(numbersOne[i]);
+
+}
+    
+
+
+let doubled = numbers.map(function(num) {
+    return num * 2;
+});
+console.log(doubled); // [20, 40, 60, 80]
+
+
+let adults = [15, 22, 17, 30].filter(function(age){
+
+   return age >= 18;
+
+});
+
+console.log(adults);
+
+
+let fruitsS = ['Alma', 'Banan', 'Portagal', 'Uzum'];
+
+for(let i = 0; i < fruitsS.length; i ++){
+
+   console.log((i + 1) + ". " + fruitsS[i]);
+}
+
+
+
+/*let prices = [100, 200, 50, 300];
+
+let newPrices = prices.map(function(price) {
+    return price + 50;   // hər qiymətə 50 manat əlavə et
+});
+console.log(newPrices); */
+
+let prices = [100, 200, 50, 300];
+
+let newPrices = prices.map(function(price){
+
+   return price + 50;
+
+});
+console.log(newPrices);
+
+
+/*
+
+
+let ages = [12, 18, 25, 15, 30, 17];
+
+let yetkinler = ages.filter(function(age) {
+    return age >= 18;
+});
+console.log("Yetkinlər:", yetkinler);
+
+
+*/
+
+let agesTwo = [12, 18, 25, 15, 30, 17];
+
+let yetkinler = agesTwo.filter(function(age){
+  
+   return age >= 18;
+
+});
+
+console.log("Yetkinler:", yetkinler);
+
+
+
+let numberFre = [5,8,12,3,20];
+
+let numberOneTwo = numberFre.map(function(number){
+
+
+   return number * 2;
+
+});
+
+console.log(numberOneTwo);
+
+
+let agesFree = [5, 8, 12, 3, 20];
+
+let oneNumber = agesFree.filter(function(age){
+
+   return age > 10;
+
+});
+
+console.log(oneNumber);
+
+
+
+function filterAndDouble(numbers) {
+    
+    // 1. Əvvəlcə filter edirik (yalnız 10-dan böyükləri saxlayırıq)
+    let filtered = numbers.filter(function(num) {
+        return num > 10;
+    });
+    
+    // 2. Sonra map edirik (saxladığımız rəqəmləri 2-yə vururuq)
+    let doubled = filtered.map(function(num) {
+        return num * 2;
+    });
+    
+    console.log(doubled);
+}
+
+filterAndDouble([5, 8, 12, 3, 20]);
