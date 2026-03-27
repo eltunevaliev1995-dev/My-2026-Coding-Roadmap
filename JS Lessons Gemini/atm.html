@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="atm.css">
+</head>
+
+<body>
+
+    <div class="atm-wrap">
+
+        <!-- EKRAN -->
+        <div class="atm-screen" id="screen">
+
+            <!-- PIN EKRANI -->
+            <div class="screen-page active" id="page-pin">
+                <div class="bank-logo">⬡ AZBANK</div>
+                <div class="screen-title">PIN kodunuzu daxil edin</div>
+                <div class="pin-dots">
+                    <span class="dot" id="dot-0"></span>
+                    <span class="dot" id="dot-1"></span>
+                    <span class="dot" id="dot-2"></span>
+                    <span class="dot" id="dot-3"></span>
+                </div>
+                <div class="screen-hint">Kartınızı daxil edin</div>
+            </div>
+
+            <!-- ANA MENYU -->
+            <div class="screen-page" id="page-menu">
+                <div class="bank-logo">⬡ AZBANK</div>
+                <div class="balance-bar">
+                    <span class="bal-label">Balans</span>
+                    <span class="bal-amount" id="bal-display">2 450.00 ₼</span>
+                </div>
+                <div class="menu-grid">
+                    <button class="menu-btn" onclick="goTo('page-withdraw')">
+                        <span class="mb-icon">↑</span>
+                        <span class="mb-text">Çıxarış</span>
+                    </button>
+                    <button class="menu-btn" onclick="goTo('page-deposit')">
+                        <span class="mb-icon">↓</span>
+                        <span class="mb-text">Yatırım</span>
+                    </button>
+                    <button class="menu-btn" onclick="goTo('page-transfer')">
+                        <span class="mb-icon">⇄</span>
+                        <span class="mb-text">Köçürmə</span>
+                    </button>
+                    <button class="menu-btn" onclick="goTo('page-history')">
+                        <span class="mb-icon">≡</span>
+                        <span class="mb-text">Tarix</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ÇIXARIŞ -->
+            <div class="screen-page" id="page-withdraw">
+                <div class="page-header">
+                    <button class="back-btn" onclick="goTo('page-menu')">← Geri</button>
+                    <span>Çıxarış</span>
+                </div>
+                <div class="quick-amounts">
+                    <button class="quick-btn" onclick="setAmount(50)">50 ₼</button>
+                    <button class="quick-btn" onclick="setAmount(100)">100 ₼</button>
+                    <button class="quick-btn" onclick="setAmount(200)">200 ₼</button>
+                    <button class="quick-btn" onclick="setAmount(500)">500 ₼</button>
+                </div>
+                <div class="amount-input-wrap">
+                    <span class="currency-sign">₼</span>
+                    <input type="number" id="withdraw-amount" placeholder="0.00" min="1">
+                </div>
+                <button class="action-btn" onclick="doWithdraw()">TƏSDİQ ET</button>
+            </div>
+
+            <!-- YATIRIM -->
+            <div class="screen-page" id="page-deposit">
+                <div class="page-header">
+                    <button class="back-btn" onclick="goTo('page-menu')">← Geri</button>
+                    <span>Yatırım</span>
+                </div>
+                <div class="quick-amounts">
+                    <button class="quick-btn" onclick="setDepAmount(100)">100 ₼</button>
+                    <button class="quick-btn" onclick="setDepAmount(500)">500 ₼</button>
+                    <button class="quick-btn" onclick="setDepAmount(1000)">1000 ₼</button>
+                    <button class="quick-btn" onclick="setDepAmount(2000)">2000 ₼</button>
+                </div>
+                <div class="amount-input-wrap">
+                    <span class="currency-sign">₼</span>
+                    <input type="number" id="deposit-amount" placeholder="0.00" min="1">
+                </div>
+                <button class="action-btn green" onclick="doDeposit()">TƏSDİQ ET</button>
+            </div>
+
+            <!-- KÖÇÜRMƏ -->
+            <div class="screen-page" id="page-transfer">
+                <div class="page-header">
+                    <button class="back-btn" onclick="goTo('page-menu')">← Geri</button>
+                    <span>Köçürmə</span>
+                </div>
+                <div class="input-field-wrap">
+                    <label>Kart nömrəsi</label>
+                    <input type="text" id="transfer-card" placeholder="**** **** **** ****" maxlength="19">
+                </div>
+                <div class="amount-input-wrap">
+                    <span class="currency-sign">₼</span>
+                    <input type="number" id="transfer-amount" placeholder="0.00" min="1">
+                </div>
+                <button class="action-btn blue" onclick="doTransfer()">KÖÇÜR</button>
+            </div>
+
+            <!-- TARİX -->
+            <div class="screen-page" id="page-history">
+                <div class="page-header">
+                    <button class="back-btn" onclick="goTo('page-menu')">← Geri</button>
+                    <span>Əməliyyat Tarixi</span>
+                </div>
+                <ul class="history-ul" id="history-ul">
+                    <li class="no-history">Hələ heç bir əməliyyat yoxdur</li>
+                </ul>
+            </div>
+
+            <!-- NƏTİCƏ -->
+            <div class="screen-page" id="page-result">
+                <div class="result-icon" id="result-icon">✓</div>
+                <div class="result-title" id="result-title">Uğurlu!</div>
+                <div class="result-msg" id="result-msg"></div>
+                <button class="action-btn" onclick="goTo('page-menu')" style="margin-top:32px">ANA MENYU</button>
+            </div>
+
+        </div>
+        <!-- EKRAN BİTDİ -->
+
+        <!-- KLAVIATURA -->
+        <div class="keypad">
+            <button class="key" onclick="pressKey('1')">1</button>
+            <button class="key" onclick="pressKey('2')">2</button>
+            <button class="key" onclick="pressKey('3')">3</button>
+            <button class="key" onclick="pressKey('4')">4</button>
+            <button class="key" onclick="pressKey('5')">5</button>
+            <button class="key" onclick="pressKey('6')">6</button>
+            <button class="key" onclick="pressKey('7')">7</button>
+            <button class="key" onclick="pressKey('8')">8</button>
+            <button class="key" onclick="pressKey('9')">9</button>
+            <button class="key red" onclick="clearPin()">SİL</button>
+            <button class="key" onclick="pressKey('0')">0</button>
+            <button class="key green" onclick="confirmPin()">OK</button>
+        </div>
+
+        <!-- KART YUVASI -->
+        <div class="card-slot">
+            <div class="slot-line"></div>
+            <span>KART</span>
+        </div>
+
+        <!-- PUL YUVASI -->
+        <div class="cash-slot">
+            <div class="slot-line"></div>
+            <span>NAĞ PUL</span>
+        </div>
+
+    </div>
+
+    <script src="atm.js"></script>
+</body>
+
+</html>
