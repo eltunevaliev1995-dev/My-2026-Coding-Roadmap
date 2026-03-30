@@ -1,4 +1,10 @@
+/*
+
+
+
 // 1. let (ən çox istifadə olunur, dəyişə bilir)
+
+
 // let name = "Eltun"; // string (mətn)
 let age  = 31; // number (rəqəm)
 
@@ -379,12 +385,12 @@ for(let i = 0; i < fruitsS.length; i ++){
 
 
 
-/*let prices = [100, 200, 50, 300];
+let prices = [100, 200, 50, 300];
 
 let newPrices = prices.map(function(price) {
     return price + 50;   // hər qiymətə 50 manat əlavə et
 });
-console.log(newPrices); */
+console.log(newPrices); 
 
 let prices = [100, 200, 50, 300];
 
@@ -396,7 +402,7 @@ let newPrices = prices.map(function(price){
 console.log(newPrices);
 
 
-/*
+
 
 
 let ages = [12, 18, 25, 15, 30, 17];
@@ -407,7 +413,7 @@ let yetkinler = ages.filter(function(age) {
 console.log("Yetkinlər:", yetkinler);
 
 
-*/
+
 
 let agesTwo = [12, 18, 25, 15, 30, 17];
 
@@ -447,12 +453,10 @@ console.log(oneNumber);
 
 function filterAndDouble(numbers) {
     
-    // 1. Əvvəlcə filter edirik (yalnız 10-dan böyükləri saxlayırıq)
     let filtered = numbers.filter(function(num) {
         return num > 10;
     });
     
-    // 2. Sonra map edirik (saxladığımız rəqəmləri 2-yə vururuq)
     let doubled = filtered.map(function(num) {
         return num * 2;
     });
@@ -461,3 +465,305 @@ function filterAndDouble(numbers) {
 }
 
 filterAndDouble([5, 8, 12, 3, 20]);
+
+let user = {
+    name: "Eltun",           // string
+    age: 25,                 // number
+    city: "Tbilisi",         // string
+    isStudent: true,         // boolean
+    skills: ["HTML", "JS"]   // array də ola bilər
+};
+
+console.log(user.name);      // Eltun
+console.log(user.age);       // 25
+console.log(user.skills);    // ["HTML", "JS"]
+
+
+
+let user = {
+
+   name: "Elton",
+   surname: "Valiev",
+   age: 31,
+   country: "Georgia",
+   isStudent: false,
+   skills: ["HTML,CSS,JS"]
+
+}
+
+
+console.log(user.name);
+console.log(user.surname);
+console.log(user.age);
+console.log(user.country);
+console.log(user.isStudent);
+console.log(user.skills);
+
+
+
+
+let car = {
+    brand: "BMW",
+    model: "X5",
+    year: 2023,
+    color: "qara"
+};
+
+console.log("Marka:", car.brand);
+console.log("İl:", car.year);
+
+
+
+
+let car = {
+
+   brand: "BMW",
+   model: "X5",
+   year:  2023,
+   color: "Black"
+
+}
+
+
+console.log(`Masinin Markasi ${car.brand}`);
+console.log(car.model);
+console.log(car.year);
+console.log(car.color);
+
+
+let person = {
+    name: "Eltun",
+    age: 25,
+    city: "Tbilisi"
+};
+
+// yeni məlumat əlavə et
+person.job = "Junior Developer";
+person.skills = ["HTML", "CSS", "JS"];
+
+console.log(person);
+
+
+
+
+let persons = {
+
+   name: "Julia",
+   age:  18,
+   country: "Ukraine"
+}
+
+
+persons.job = "Model";
+persons.skills = "Loving";
+
+
+console.log(persons);
+
+
+
+
+
+let students = [
+    { name: "Eltun", age: 25, score: 85 },
+    { name: "Ayxan", age: 22, score: 92 },
+    { name: "Leyla", age: 24, score: 78 }
+];
+
+students.forEach(function(student) {
+    console.log(`${student.name} - balı: ${student.score}`);
+});
+
+
+
+
+
+let students = [
+
+   {name: "Jane",  age: 18, score: 90},
+   {name: "Julia", age: 20, score: 100},
+   {name: "John" , age: 33, score: 50 }
+
+];
+
+
+students.forEach(function(student){
+
+   console.log(`${student.name},  ${student.age} age ${student.score} score`);
+
+});
+
+
+
+
+function showUserInfo(user) {
+    console.log("Ad: " + user.name);
+    console.log("Yaş: " + user.age);
+    console.log("Şəhər: " + user.city);
+    console.log("İş: " + user.job);
+}
+
+
+let userEltun = {
+    name: "Eltun",
+    age: 25,
+    city: "Tbilisi",
+    job: "Frontend Developer"
+};
+
+
+showUserInfo(userEltun);
+
+
+function userInfo(users){
+
+   console.log(`Name:    ${users.name}`);
+   console.log(`Surname: ${users.surname}`);
+   console.log(`Age: ${users.age}`);
+   console.log(`Country: ${users.country}`);
+}
+
+
+let userInformation = {
+
+   name: "Elton",
+   surname: "Valiev",
+   age: 31,
+   country: "Georgia"
+
+}
+
+
+userInfo(userInformation);
+
+
+
+let users = [
+    { id: 1, name: "Eltun", age: 25, city: "Tbilisi" },
+    { id: 2, name: "Ayxan", age: 22, city: "Baku" },
+    { id: 3, name: "Leyla", age: 24, city: "Gəncə" }
+];
+
+
+
+
+let users = [
+
+   { id: 1, name: "John Doe",     age: 31, city: "Tbilisi"},
+   { id: 2, name: "Elton Valiev", age: 20, city: "Istanbul"},
+   { id: 3, name: "Okan Velizade",age: 18, city: "Berlin"  },
+
+];
+
+
+users.forEach(function(userinfo){
+
+   console.log(`${userinfo.name}, ${userinfo.age}, ${userinfo.city} `);
+
+});
+
+
+
+
+
+
+
+let products = [
+    { name: "Telefon", price: 1200, inStock: true },
+    { name: "Klaviatura", price: 80, inStock: false },
+    { name: "Qulaqlıq", price: 150, inStock: true }
+];
+
+products.forEach(function(product) {
+    console.log(product.name + " - " + product.price + " AZN");
+});
+
+
+
+let products = [
+
+   { name: "Phone",    price: 1200, inStock: true},
+   { name: "Keyboard", price: 500,  inStock: false},
+   { name: "AirPods",  price: 150,  inStock: true}
+
+];
+
+products.forEach(function(product){
+
+   console.log(`${product.name}, ${product.price}, ${product.inStock}`);
+});
+
+
+
+
+let studentsS = [
+    { name: "Eltun", score: 85 },
+    { name: "Ayxan", score: 92 },
+    { name: "Leyla", score: 78 }
+];
+
+
+let highScore = students.filter(function(student) {
+    return student.score >= 80;
+});
+
+console.log(highScore);
+
+
+
+
+
+let proStudents = [
+
+
+   { name: "Ayxan", score: 100},
+   { name: "Adil",  score: 900},
+   { name: "Firuze",score: 60}
+
+];
+
+
+let highScoreS = proStudents.filter(function(student){
+
+   return student.score >= 80;
+
+});
+
+
+console.log(highScoreS);
+
+
+/*
+
+
+Tapşırıq 3 (Ən vacib!)
+Funksiya yaz: showExpensiveProducts(products, minPrice)
+
+Parametrlər: products (array of objects) və minPrice (rəqəm)
+Yalnız qiyməti minPrice-dan böyük və ya bərabər olan məhsulları filter et
+Hər məhsulu belə çap et: "Telefon - 1200 AZN" */
+
+
+
+function showExpensiveProducts(products, minPrice) {
+    
+    let expensive = products.filter(function(product) {
+        return product.price >= minPrice;   // >= işarəsi ilə bərabər də daxil olur
+    });
+
+    // Filter olunmuş məhsulları gözəl şəkildə göstəririk
+    expensive.forEach(function(product) {
+        console.log(product.name + " - " + product.price + " AZN");
+    });
+}
+
+// Test üçün məlumatlar
+let products = [
+    { name: "Phone", price: 1200 },
+    { name: "Airpods", price: 500 },
+    { name: "KeyBoard", price: 400 },
+    { name: "Mouse", price: 80 }
+];
+
+// Funksiyanı çağırırıq
+showExpensiveProducts(products, 400);

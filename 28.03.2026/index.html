@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>🌤️ Hava Proqnozu</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     
+
+      
+     <div class="weather-app">
+
+          <h1>🌤️ Hava Proqnozu</h1>
+
+          <div class="search-box">
+
+                <input type="text" class="search-input" id="cityInput"
+                placeholder="Şəhər adı yazın (məs: Bakı, İstanbul)..." autocomplete="off">
+                <button class="search-btn" onclick="searchWeather()">🔍"></button>
+                <div class="suggestions" id="suggestions"></div>
+
+          </div>
+
+
+          <div class="loading" id="loading">
+
+              <div class="spinner"></div>
+              <p>Məlumatlar yüklənir...</p>
+
+          </div>
+
+          <div class="error" id="error"></div>
+
+          <div class="weather-card" id="weatherCard">
+
+             <div class="city-name"    id="cityName">--</div>
+             <div class="weather-icon" id="weatherIcon">☀️</div>
+             <div class="temperature"  id="temperature">--°</div>
+             <div class="description"  id="description">--</div>
+
+
+             <div class="details">
+
+               <div class="detail-box">
+
+                    <div class="detail-icon">💨</div>
+                    <div class="detail-label">Külək</div>
+                    <div class="detail-value" id="windSpeed">-- km/s</div>
+
+               </div>
+               <div class="detail-box">
+
+                    <div class="detail-icon">💧</div>
+                    <div class="detail-label">Rütubət</div>
+                    <div class="detail-value" id="humidity">--%</div>
+
+               </div>
+               <div class="detail-box">
+
+                    <div class="detail-icon">👁️</div>
+                    <div class="detail-label">Görünürlük</div>
+                    <div class="detail-value" id="visibility">-- km</div>
+
+               </div>
+
+             </div>
+             <div class="forecast" id="forecastSection">
+
+               <div class="forecast-title">📅 3 Günlük Proqnoz</div>
+               <div class="forecast-days" id="forecastDays"></div>
+
+             </div>
+
+          </div>
+
+     </div>
+
+
+
+
+<script src="script.js"></script>     
+</body>
+</html>
