@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="az" class="scroll-smooth">
+
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>VOGUE X 2026 - Gələcəyin Moda Evi</title>
+          <script src="https://cdn.tailwindcss.com"></script>
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+                    rel="stylesheet">
+                    <link rel="stylesheet" href="style.css">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+          <script src="https://unpkg.com/lucide@latest"></script>
+          <script>
+                    tailwind.config = {
+                              theme: {
+                                        extend: {
+                                                  fontFamily: {
+                                                            sans: ['Plus Jakarta Sans', 'sans-serif'],
+                                                            serif: ['Cormorant Garamond', 'serif'],
+                                                  },
+                                                  colors: {
+                                                            'fashion-black': '#0a0a0a',
+                                                            'fashion-gray': '#1a1a1a',
+                                                            'luxury-gold': '#d4af37',
+                                                            'luxury-rose': '#e8b4b8',
+                                                            'neon-purple': '#b026ff',
+                                                            'sustainable-green': '#00d084',
+                                                  },
+                                                  animation: {
+                                                            'marquee': 'marquee 25s linear infinite',
+                                                            'float': 'float 6s ease-in-out infinite',
+                                                            'shimmer': 'shimmer 2s linear infinite',
+                                                            'spin-slow': 'spin 12s linear infinite',
+                                                  },
+                                                  keyframes: {
+                                                            marquee: {
+                                                                      '0%': { transform: 'translateX(0%)' },
+                                                                      '100%': { transform: 'translateX(-100%)' },
+                                                            },
+                                                            float: {
+                                                                      '0%, 100%': { transform: 'translateY(0)' },
+                                                                      '50%': { transform: 'translateY(-20px)' },
+                                                            },
+                                                            shimmer: {
+                                                                      '0%': { backgroundPosition: '-1000px 0' },
+                                                                      '100%': { backgroundPosition: '1000px 0' },
+                                                            }
+                                                  }
+                                        }
+                              }
+                    }
+          </script>
+          
+</head>
+
+<body class="antialiased overflow-x-hidden">
+
+          <!-- Custom Cursor -->
+          <div class="cursor-follower hidden lg:block" id="cursor"></div>
+
+          <!-- Top Bar -->
+          <div class="bg-fashion-black text-white text-xs py-2 overflow-hidden">
+                    <div class="flex whitespace-nowrap animate-marquee">
+                              <span class="mx-8">🚚 PULSUZ ÇATDIRILMA — 200₼+ SİFARİŞLƏR ÜÇÜN</span>
+                              <span class="mx-8">✨ YENİ 2026 YAZ KOLLEKSİYASI</span>
+                              <span class="mx-8">🌱 SUSTAINABLE FASHION — EKO-DOST</span>
+                              <span class="mx-8">🎁 İLK SİFARİŞƏ 20% ENDİRİM — KOD: VOGUE2026</span>
+                              <span class="mx-8">🚚 PULSUZ ÇATDIRILMA — 200₼+ SİFARİŞLƏR ÜÇÜN</span>
+                              <span class="mx-8">✨ YENİ 2026 YAZ KOLLEKSİYASI</span>
+                              <span class="mx-8">🌱 SUSTAINABLE FASHION — EKO-DOST</span>
+                              <span class="mx-8">🎁 İLK SİFARİŞƏ 20% ENDİRİM — KOD: VOGUE2026</span>
+                    </div>
+          </div>
+
+          <!-- Navigation -->
+          <nav class="fixed w-full z-50 transition-all duration-500" id="navbar">
+                    <div class="glass-luxury border-b border-gray-200 dark:border-gray-800">
+                              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                        <div class="flex justify-between items-center h-20">
+                                                  <!-- Mobile Menu -->
+                                                  <button class="lg:hidden p-2" onclick="toggleMobileMenu()">
+                                                            <i data-lucide="menu" class="w-6 h-6"></i>
+                                                  </button>
+
+                                                  <!-- Logo -->
+                                                  <div class="flex items-center gap-2 cursor-pointer group">
+                                                            <span
+                                                                      class="font-serif text-3xl italic font-bold text-luxury-gradient tracking-wider group-hover:tracking-widest transition-all">VOGUE
+                                                                      X</span>
+                                                            <span
+                                                                      class="text-xs font-bold bg-fashion-black text-white px-2 py-1 rounded">2026</span>
+                                                  </div>
+
+                                                  <!-- Desktop Menu -->
+                                                  <div
+                                                            class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
+                                                            <a href="#new"
+                                                                      class="hover:text-luxury-gold transition-colors relative group">
+                                                                      YENİ
+                                                                      <span
+                                                                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-luxury-gold transition-all group-hover:w-full"></span>
+                                                            </a>
+                                                            <a href="#women"
+                                                                      class="hover:text-luxury-gold transition-colors relative group">
+                                                                      QADIN
+                                                                      <span
+                                                                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-luxury-gold transition-all group-hover:w-full"></span>
+                                                            </a>
+                                                            <a href="#men"
+                                                                      class="hover:text-luxury-gold transition-colors relative group">
+                                                                      KİŞİ
+                                                                      <span
+                                                                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-luxury-gold transition-all group-hover:w-full"></span>
+                                                            </a>
+                                                            <a href="#accessories"
+                                                                      class="hover:text-luxury-gold transition-colors relative group">
+                                                                      AKSESUAR
+                                                                      <span
+                                                                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-luxury-gold transition-all group-hover:w-full"></span>
+                                                            </a>
+                                                            <a href="#sustainable"
+                                                                      class="hover:text-sustainable-green transition-colors relative group flex items-center gap-1">
+                                                                      <i data-lucide="leaf" class="w-4 h-4"></i>
+                                                                      EKO
+                                                                      <span
+                                                                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-sustainable-green transition-all group-hover:w-full"></span>
+                                                            </a>
+                                                  </div>
+
+                                                  <!-- Actions -->
+                                                  <div class="flex items-center gap-4">
+                                                            <button class="hidden md:block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+                                                                      onclick="toggleSearch()">
+                                                                      <i data-lucide="search" class="w-5 h-5"></i>
+                                                            </button>
+
+                                                            <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors relative"
+                                                                      onclick="toggleWishlist()">
+                                                                      <i data-lucide="heart" class="w-5 h-5"></i>
+                                                                      <span id="wishlistBadge"
+                                                                                class="absolute -top-1 -right-1 w-4 h-4 bg-luxury-rose text-white text-xs rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
+                                                            </button>
+
+                                                            <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors relative"
+                                                                      onclick="toggleCart()">
+                                                                      <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                                                                      <span id="cartBadge"
+                                                                                class="absolute -top-1 -right-1 w-5 h-5 bg-fashion-black text-luxury-gold text-xs font-bold rounded-full flex items-center justify-center opacity-0 transition-opacity border border-luxury-gold">0</span>
+                                                            </button>
+
+                                                            <button
+                                                                      class="hidden md:flex items-center gap-2 px-4 py-2 bg-fashion-black text-white rounded-full hover:bg-gray-800 transition-colors text-sm font-medium">
+                                                                      <i data-lucide="user" class="w-4 h-4"></i>
+                                                                      Daxil ol
+                                                            </button>
+
+                                                            <button onclick="toggleDarkMode()"
+                                                                      class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                                                                      <i data-lucide="moon"
+                                                                                class="w-5 h-5 dark:hidden"></i>
+                                                                      <i data-lucide="sun"
+                                                                                class="w-5 h-5 hidden dark:block"></i>
+                                                            </button>
+                                                  </div>
+                                        </div>
+                              </div>
+                    </div>
+          </nav>
+
+          <!-- Search Overlay -->
+          <div id="searchOverlay"
+                    class="fixed inset-0 z-50 bg-white/95 dark:bg-black/95 backdrop-blur-xl hidden opacity-0 transition-opacity duration-300">
+                    <div class="max-w-4xl mx-auto pt-32 px-4">
+                              <div class="relative">
+                                        <input type="text" id="searchInput"
+                                                  placeholder="Kolleksiya, rəng, ölçü axtarın..."
+                                                  class="w-full text-4xl md:text-6xl font-serif border-b-2 border-gray-200 dark:border-gray-800 bg-transparent py-4 focus:outline-none focus:border-luxury-gold transition-colors placeholder:text-gray-300 dark:placeholder:text-gray-700">
+                                        <button onclick="toggleSearch()"
+                                                  class="absolute right-0 top-1/2 -translate-y-1/2 p-4 hover:rotate-90 transition-transform">
+                                                  <i data-lucide="x" class="w-8 h-8"></i>
+                                        </button>
+                              </div>
+                              <div class="mt-8 flex flex-wrap gap-3 text-sm text-gray-500">
+                                        <span>Populyar:</span>
+                                        <button onclick="quickSearch('summer dress')"
+                                                  class="hover:text-luxury-gold transition-colors underline">Yay
+                                                  donları</button>
+                                        <button onclick="quickSearch('linen')"
+                                                  class="hover:text-luxury-gold transition-colors underline">Kətan</button>
+                                        <button onclick="quickSearch('oversized')"
+                                                  class="hover:text-luxury-gold transition-colors underline">Oversized</button>
+                                        <button onclick="quickSearch('sustainable')"
+                                                  class="hover:text-sustainable-green transition-colors underline">Eko-dost</button>
+                              </div>
+                    </div>
+          </div>
+
+          <!-- Hero Section -->
+          <section class="relative min-h-screen pt-20 overflow-hidden">
+                    <div class="absolute inset-0 grid grid-cols-1 lg:grid-cols-2">
+                              <div class="relative overflow-hidden">
+                                        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1200&q=80"
+                                                  alt="Fashion Model"
+                                                  class="w-full h-full object-cover parallax-image scale-110"
+                                                  id="heroImage1">
+                                        <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent">
+                                        </div>
+                              </div>
+                              <div class="hidden lg:block relative overflow-hidden bg-fashion-gray">
+                                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200&q=80"
+                                                  alt="Fashion Detail"
+                                                  class="w-full h-full object-cover parallax-image scale-110 opacity-80"
+                                                  id="heroImage2">
+                              </div>
+                    </div>
+
+                    <div class="relative z-10 max-w-7xl mx-auto px-4 h-full flex items-center min-h-screen">
+                              <div class="max-w-2xl space-y-8 pt-20">
+                                        <div class="space-y-4">
+                                                  <p
+                                                            class="text-luxury-gold font-medium tracking-widest text-sm uppercase animate-fade-in">
+                                                            2026 Yaz/Yay Kolleksiyası</p>
+                                                  <h1
+                                                            class="font-serif text-5xl md:text-7xl lg:text-8xl font-light leading-tight text-white mix-blend-difference">
+                                                            <em class="not-italic font-bold">Minimal</em><br>
+                                                            <span class="italic">Elegance</span>
+                                                  </h1>
+                                        </div>
+
+                                        <p class="text-lg md:text-xl text-gray-200 max-w-md leading-relaxed font-light">
+                                                  Sürdürülebilir modanın zirvəsi. Hər parça bir hekayə, hər toxuma bir
+                                                  təcrübə.
+                                        </p>
+
+                                        <div class="flex flex-wrap gap-4">
+                                                  <button onclick="scrollToCollection()"
+                                                            class="group px-8 py-4 bg-white text-fashion-black rounded-full font-medium hover:bg-luxury-gold hover:text-white transition-all duration-300 flex items-center gap-3">
+                                                            Kolleksiyanı Keşf Et
+                                                            <i data-lucide="arrow-right"
+                                                                      class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                                  </button>
+                                                  <button
+                                                            class="px-8 py-4 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-fashion-black transition-all duration-300 flex items-center gap-3">
+                                                            <i data-lucide="play" class="w-5 h-5"></i>
+                                                            Lookbook
+                                                  </button>
+                                        </div>
+
+                                        <div class="flex items-center gap-8 pt-8 text-white/80 text-sm">
+                                                  <div class="flex items-center gap-2">
+                                                            <i data-lucide="check-circle"
+                                                                      class="w-5 h-5 text-sustainable-green"></i>
+                                                            <span>100% Organik</span>
+                                                  </div>
+                                                  <div class="flex items-center gap-2">
+                                                            <i data-lucide="check-circle"
+                                                                      class="w-5 h-5 text-sustainable-green"></i>
+                                                            <span>Zero Waste</span>
+                                                  </div>
+                                                  <div class="flex items-center gap-2">
+                                                            <i data-lucide="check-circle"
+                                                                      class="w-5 h-5 text-sustainable-green"></i>
+                                                            <span>Fair Trade</span>
+                                                  </div>
+                                        </div>
+                              </div>
+                    </div>
+
+                    <!-- Scroll Indicator -->
+                    <div
+                              class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 animate-bounce">
+                              <span class="text-xs tracking-widest uppercase">Aşağı</span>
+                              <i data-lucide="mouse" class="w-5 h-5"></i>
+                    </div>
+          </section>
+
+          <!-- AI Stylist Widget -->
+          <div class="fixed bottom-8 right-8 z-40 hidden lg:block">
+                    <button onclick="toggleAIStylist()"
+                              class="ai-stylist-bubble w-16 h-16 rounded-full try-on-btn text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-transform relative overflow-hidden group">
+                              <i data-lucide="sparkles" class="w-7 h-7 relative z-10"></i>
+                              <div
+                                        class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform">
+                              </div>
+                    </button>
+                    <div
+                              class="absolute -top-12 right-0 bg-fashion-black text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                              AI Stylist
+                    </div>
+          </div>
+
+          <!-- AI Stylist Modal -->
+          <div id="aiStylistModal"
+                    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+                    <div class="bg-white dark:bg-fashion-gray rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-hidden shadow-2xl transform scale-95 opacity-0 transition-all duration-300"
+                              id="aiStylistContent">
+                              <div
+                                        class="p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center bg-gradient-to-r from-neon-purple/10 to-transparent">
+                                        <div class="flex items-center gap-3">
+                                                  <div
+                                                            class="w-10 h-10 rounded-full try-on-bg flex items-center justify-center">
+                                                            <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
+                                                  </div>
+                                                  <div>
+                                                            <h3 class="font-bold">AI Moda Stilist</h3>
+                                                            <p class="text-xs text-gray-500">Powered by GPT-7 Fashion
+                                                            </p>
+                                                  </div>
+                                        </div>
+                                        <button onclick="toggleAIStylist()"
+                                                  class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">
+                                                  <i data-lucide="x" class="w-5 h-5"></i>
+                                        </button>
+                              </div>
+
+                              <div class="p-6 overflow-y-auto max-h-[50vh] space-y-4" id="aiChat">
+                                        <div class="flex gap-3">
+                                                  <div
+                                                            class="w-8 h-8 rounded-full try-on-bg flex items-center justify-center flex-shrink-0">
+                                                            <i data-lucide="sparkles" class="w-4 h-4 text-white"></i>
+                                                  </div>
+                                                  <div
+                                                            class="bg-gray-100 dark:bg-gray-800 rounded-2xl rounded-tl-none px-4 py-3 text-sm max-w-[80%]">
+                                                            Salam! Mən sizin şəxsi moda stilistinizəm. Bugün hansı
+                                                            mərasim üçün geyinmək istəyirsiniz?
+                                                  </div>
+                                        </div>
+                              </div>
+
+                              <div
+                                        class="p-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                                        <div class="flex gap-2">
+                                                  <input type="text" id="aiInput"
+                                                            placeholder="Məsələn: 'İş görüşməsi üçün kostyum axtarıram...'"
+                                                            class="flex-1 bg-white dark:bg-fashion-gray border border-gray-300 dark:border-gray-700 rounded-full px-4 py-3 text-sm focus:outline-none focus:border-neon-purple"
+                                                            onkeypress="if(event.key==='Enter') sendAIMessage()">
+                                                  <button onclick="sendAIMessage()"
+                                                            class="w-12 h-12 rounded-full try-on-btn text-white flex items-center justify-center hover:scale-105 transition-transform">
+                                                            <i data-lucide="send" class="w-5 h-5"></i>
+                                                  </button>
+                                        </div>
+                                        <div class="flex gap-2 mt-3 overflow-x-auto pb-2">
+                                                  <button onclick="quickAI('Ofis üçün')"
+                                                            class="px-4 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full text-xs whitespace-nowrap hover:border-neon-purple transition-colors">Ofis
+                                                            üçün</button>
+                                                  <button onclick="quickAI('Gecə klubu')"
+                                                            class="px-4 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full text-xs whitespace-nowrap hover:border-neon-purple transition-colors">Gecə
+                                                            klubu</button>
+                                                  <button onclick="quickAI('Toy məclisi')"
+                                                            class="px-4 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full text-xs whitespace-nowrap hover:border-neon-purple transition-colors">Toy
+                                                            məclisi</button>
+                                                  <button onclick="quickAI('Gündəlik')"
+                                                            class="px-4 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full text-xs whitespace-nowrap hover:border-neon-purple transition-colors">Gündəlik</button>
+                                        </div>
+                              </div>
+                    </div>
+          </div>
+
+          <!-- Filter Bar -->
+          <section
+                    class="sticky top-20 z-30 bg-white/80 dark:bg-fashion-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 py-4">
+                    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between gap-4 overflow-x-auto">
+                              <div class="flex items-center gap-2">
+                                        <button onclick="toggleFilters()"
+                                                  class="flex items-center gap-2 px-4 py-2 bg-fashion-black text-white rounded-full text-sm font-medium hover:bg-gray-800 transition-colors whitespace-nowrap">
+                                                  <i data-lucide="sliders-horizontal" class="w-4 h-4"></i>
+                                                  Filter
+                                        </button>
+
+                                        <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-2"></div>
+
+                                        <div class="flex gap-2" id="categoryFilters">
+                                                  <button onclick="filterCategory('all')"
+                                                            class="filter-pill active px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium whitespace-nowrap">Hamısı</button>
+                                                  <button onclick="filterCategory('dresses')"
+                                                            class="filter-pill px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium whitespace-nowrap">Donlar</button>
+                                                  <button onclick="filterCategory('tops')"
+                                                            class="filter-pill px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium whitespace-nowrap">Üst
+                                                            geyimlər</button>
+                                                  <button onclick="filterCategory('bottoms')"
+                                                            class="filter-pill px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium whitespace-nowrap">Alt
+                                                            geyimlər</button>
+                                                  <button onclick="filterCategory('outerwear')"
+                                                            class="filter-pill px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium whitespace-nowrap">Gödəkçələr</button>
+                                                  <button onclick="filterCategory('sustainable')"
+                                                            class="filter-pill px-4 py-2 rounded-full border border-sustainable-green text-sustainable-green text-sm font-medium whitespace-nowrap flex items-center gap-1">
+                                                            <i data-lucide="leaf" class="w-3 h-3"></i>
+                                                            Eko
+                                                  </button>
+                                        </div>
+                              </div>
+
+                              <div class="flex items-center gap-4">
+                                        <select id="sortSelect" onchange="sortProducts()"
+                                                  class="bg-transparent border border-gray-300 dark:border-gray-700 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-luxury-gold cursor-pointer">
+                                                  <option value="newest">Ən Yeni</option>
+                                                  <option value="price-low">Qiymət: Aşağıdan Yuxarı</option>
+                                                  <option value="price-high">Qiymət: Yuxarıdan Aşağı</option>
+                                                  <option value="popular">Ən Populyar</option>
+                                        </select>
+
+                                        <div
+                                                  class="flex gap-1 border border-gray-300 dark:border-gray-700 rounded-full p-1">
+                                                  <button onclick="setGridView(2)"
+                                                            class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                                                            id="grid2">
+                                                            <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                                                  </button>
+                                                  <button onclick="setGridView(4)"
+                                                            class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-colors"
+                                                            id="grid4">
+                                                            <i data-lucide="grid-2x2" class="w-4 h-4"></i>
+                                                  </button>
+                                        </div>
+                              </div>
+                    </div>
+          </section>
+
+          <!-- Products Section -->
+          <section id="collection" class="py-16 bg-gray-50 dark:bg-fashion-gray/30">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                              <div class="flex justify-between items-end mb-12">
+                                        <div>
+                                                  <h2 class="font-serif text-4xl md:text-5xl font-light italic mb-2">
+                                                            Yeni Gələnlər</h2>
+                                                  <p class="text-gray-500">Bu həftənin seçilmiş parçaları</p>
+                                        </div>
+                                        <div class="hidden md:flex items-center gap-2 text-sm text-gray-500">
+                                                  <span id="showingCount">12</span> məhsul göstərilir
+                                        </div>
+                              </div>
+
+                              <div id="productsGrid"
+                                        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                                        <!-- Products injected by JS -->
+                              </div>
+
+                              <div class="text-center mt-16">
+                                        <button onclick="loadMore()"
+                                                  class="group px-8 py-4 border-2 border-fashion-black dark:border-white rounded-full font-medium hover:bg-fashion-black hover:text-white dark:hover:bg-white dark:hover:text-fashion-black transition-all duration-300 flex items-center gap-2 mx-auto">
+                                                  Daha Çox Göstər
+                                                  <i data-lucide="chevron-down"
+                                                            class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
+                                        </button>
+                              </div>
+                    </div>
+          </section>
+
+          <!-- Lookbook Section -->
+          <section class="py-24 bg-fashion-black text-white overflow-hidden">
+                    <div class="max-w-7xl mx-auto px-4">
+                              <div class="text-center mb-16">
+                                        <span class="text-luxury-gold text-sm tracking-widest uppercase">2026
+                                                  Lookbook</span>
+                                        <h2 class="font-serif text-4xl md:text-6xl font-light mt-4">Həftənin Setləri
+                                        </h2>
+                              </div>
+
+                              <div class="flex gap-4 h-[600px] overflow-hidden rounded-2xl">
+                                        <div class="lookbook-item flex-1 relative overflow-hidden cursor-pointer group">
+                                                  <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80"
+                                                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                                  <div
+                                                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                                            <p class="text-luxury-gold text-sm mb-2">Ofis Şıqlığı</p>
+                                                            <h3 class="font-serif text-2xl italic">Power Suit</h3>
+                                                            <button onclick="shopLook(1)"
+                                                                      class="mt-4 px-6 py-2 bg-white text-fashion-black rounded-full text-sm font-medium hover:bg-luxury-gold transition-colors w-fit">
+                                                                      Seti Al
+                                                            </button>
+                                                  </div>
+                                        </div>
+                                        <div class="lookbook-item flex-1 relative overflow-hidden cursor-pointer group">
+                                                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&q=80"
+                                                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                                  <div
+                                                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                                            <p class="text-luxury-gold text-sm mb-2">Yay Axşamı</p>
+                                                            <h3 class="font-serif text-2xl italic">Silk Dreams</h3>
+                                                            <button onclick="shopLook(2)"
+                                                                      class="mt-4 px-6 py-2 bg-white text-fashion-black rounded-full text-sm font-medium hover:bg-luxury-gold transition-colors w-fit">
+                                                                      Seti Al
+                                                            </button>
+                                                  </div>
+                                        </div>
+                                        <div
+                                                  class="lookbook-item flex-1 relative overflow-hidden cursor-pointer group hidden md:block">
+                                                  <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&q=80"
+                                                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                                  <div
+                                                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                                            <p class="text-luxury-gold text-sm mb-2">Street Style</p>
+                                                            <h3 class="font-serif text-2xl italic">Urban Edge</h3>
+                                                            <button onclick="shopLook(3)"
+                                                                      class="mt-4 px-6 py-2 bg-white text-fashion-black rounded-full text-sm font-medium hover:bg-luxury-gold transition-colors w-fit">
+                                                                      Seti Al
+                                                            </button>
+                                                  </div>
+                                        </div>
+                              </div>
+                    </div>
+          </section>
+
+          <!-- Sustainability Banner -->
+          <section class="py-20 bg-sustainable-green/10">
+                    <div class="max-w-7xl mx-auto px-4">
+                              <div
+                                        class="glass-luxury rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 border border-sustainable-green/30">
+                                        <div class="flex-1">
+                                                  <div class="flex items-center gap-2 mb-4">
+                                                            <div
+                                                                      class="sustainability-badge text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                                                                      <i data-lucide="leaf" class="w-3 h-3"></i>
+                                                                      SUSTAINABLE
+                                                            </div>
+                                                  </div>
+                                                  <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">Moda
+                                                            Dəyişiklik Yarada Bilər</h2>
+                                                  <p class="text-gray-600 dark:text-gray-300 mb-6 max-w-xl">
+                                                            Hər bir sustainable məhsul alışında 10 ağac əkilir. 2026-cı
+                                                            ilədək karbon-neqativ olmaq missiyamızdır.
+                                                  </p>
+                                                  <div class="flex flex-wrap gap-4">
+                                                            <div class="flex items-center gap-2">
+                                                                      <div
+                                                                                class="w-12 h-12 rounded-full bg-white dark:bg-fashion-gray flex items-center justify-center">
+                                                                                <span
+                                                                                          class="font-bold text-sustainable-green">50k</span>
+                                                                      </div>
+                                                                      <div class="text-sm">
+                                                                                <div class="font-bold">Ağac əkilib</div>
+                                                                                <div class="text-gray-500">2024-cü ildən
+                                                                                          bəri</div>
+                                                                      </div>
+                                                            </div>
+                                                            <div class="flex items-center gap-2">
+                                                                      <div
+                                                                                class="w-12 h-12 rounded-full bg-white dark:bg-fashion-gray flex items-center justify-center">
+                                                                                <span
+                                                                                          class="font-bold text-sustainable-green">85%</span>
+                                                                      </div>
+                                                                      <div class="text-sm">
+                                                                                <div class="font-bold">Eko materiallar
+                                                                                </div>
+                                                                                <div class="text-gray-500">
+                                                                                          Kolleksiyamızda</div>
+                                                                      </div>
+                                                            </div>
+                                                  </div>
+                                        </div>
+                                        <div class="w-full md:w-1/3">
+                                                  <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&q=80"
+                                                            alt="Sustainable Fashion" class="rounded-2xl shadow-2xl">
+                                        </div>
+                              </div>
+                    </div>
+          </section>
+
+          <!-- Cart Drawer -->
+          <div id="cartDrawer"
+                    class="cart-drawer fixed top-0 right-0 h-full w-full md:w-[480px] bg-white dark:bg-fashion-gray shadow-2xl z-50 border-l border-gray-200 dark:border-gray-800 flex flex-col">
+                    <div
+                              class="p-6 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center glass-luxury">
+                              <div>
+                                        <h2 class="font-serif text-2xl font-bold">Səbətiniz</h2>
+                                        <p class="text-sm text-gray-500 mt-1"><span id="cartItemCount">0</span> məhsul
+                                        </p>
+                              </div>
+                              <button onclick="toggleCart()"
+                                        class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                                        <i data-lucide="x" class="w-6 h-6"></i>
+                              </button>
+                    </div>
+
+                    <div id="cartItems" class="flex-1 overflow-y-auto p-6 space-y-4">
+                              <div class="flex flex-col items-center justify-center h-full text-gray-400">
+                                        <div
+                                                  class="w-24 h-24 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-4">
+                                                  <i data-lucide="shopping-bag" class="w-10 h-10 opacity-30"></i>
+                                        </div>
+                                        <p>Səbətiniz boşdur</p>
+                                        <button onclick="toggleCart(); scrollToCollection()"
+                                                  class="mt-4 text-luxury-gold hover:underline font-medium">Alış-verişə
+                                                  başla</button>
+                              </div>
+                    </div>
+
+                    <div
+                              class="p-6 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 space-y-4">
+                              <div class="space-y-2 text-sm">
+                                        <div class="flex justify-between text-gray-600 dark:text-gray-400">
+                                                  <span>Ara cəmi</span>
+                                                  <span id="cartSubtotal">0 ₼</span>
+                                        </div>
+                                        <div class="flex justify-between text-gray-600 dark:text-gray-400">
+                                                  <span>Çatdırılma</span>
+                                                  <span id="cartShipping">Hesablanır...</span>
+                                        </div>
+                                        <div class="flex justify-between text-sustainable-green font-medium"
+                                                  id="ecoDiscount" style="display: none;">
+                                                  <span class="flex items-center gap-1">
+                                                            <i data-lucide="leaf" class="w-4 h-4"></i>
+                                                            Eko endirim
+                                                  </span>
+                                                  <span>-15 ₼</span>
+                                        </div>
+                              </div>
+
+                              <div class="border-t border-gray-300 dark:border-gray-700 pt-4">
+                                        <div class="flex justify-between items-center mb-4">
+                                                  <span class="font-bold text-lg">Cəmi</span>
+                                                  <span id="cartTotal"
+                                                            class="font-serif text-2xl font-bold text-luxury-gold">0
+                                                            ₼</span>
+                                        </div>
+
+                                        <button onclick="checkout()"
+                                                  class="w-full py-4 bg-fashion-black text-white rounded-full font-medium hover:bg-luxury-gold transition-colors flex items-center justify-center gap-2 group">
+                                                  <span>Sifarişi Tamamla</span>
+                                                  <i data-lucide="arrow-right"
+                                                            class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                        </button>
+
+                                        <p
+                                                  class="text-xs text-center text-gray-500 mt-3 flex items-center justify-center gap-1">
+                                                  <i data-lucide="lock" class="w-3 h-3"></i>
+                                                  Təhlükəsiz ödəniş • SSL şifrələmə
+                                        </p>
+                              </div>
+                    </div>
+          </div>
+          <div id="cartOverlay" onclick="toggleCart()"
+                    class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity"></div>
+
+          <!-- Product Quick View Modal -->
+          <div id="productModal"
+                    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+                    <div class="bg-white dark:bg-fashion-gray rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300"
+                              id="productModalContent">
+                              <button onclick="closeProductModal()"
+                                        class="absolute top-4 right-4 z-10 p-2 bg-white/80 dark:bg-black/80 rounded-full hover:bg-luxury-gold transition-colors">
+                                        <i data-lucide="x" class="w-6 h-6"></i>
+                              </button>
+
+                              <div class="grid md:grid-cols-2 gap-0" id="productModalBody">
+                                        <!-- Injected by JS -->
+                              </div>
+                    </div>
+          </div>
+
+          <!-- Notification Toast -->
+          <div id="notification"
+                    class="notification-toast fixed top-24 right-4 z-50 bg-fashion-black text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 max-w-sm">
+                    <div class="w-10 h-10 rounded-full bg-luxury-gold/20 flex items-center justify-center">
+                              <i data-lucide="check" class="w-5 h-5 text-luxury-gold"></i>
+                    </div>
+                    <div>
+                              <p class="font-medium" id="notificationTitle">Səbətə əlavə edildi</p>
+                              <p class="text-sm text-gray-400" id="notificationText">Silk Summer Dress</p>
+                    </div>
+          </div>
+
+          <!-- Footer -->
+          <footer class="bg-fashion-black text-white pt-20 pb-8">
+                    <div class="max-w-7xl mx-auto px-4">
+                              <div class="grid md:grid-cols-4 gap-12 mb-16">
+                                        <div>
+                                                  <span
+                                                            class="font-serif text-3xl italic font-bold text-luxury-gradient">VOGUE
+                                                            X</span>
+                                                  <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+                                                            2026-cı ilin premium moda evi. Sürdürülebilir lüks və müasir
+                                                            dizaynın birləşməsi.
+                                                  </p>
+                                                  <div class="flex gap-4 mt-6">
+                                                            <a href="#"
+                                                                      class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-luxury-gold hover:text-luxury-gold transition-colors">
+                                                                      <i data-lucide="instagram" class="w-5 h-5"></i>
+                                                            </a>
+                                                            <a href="#"
+                                                                      class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-luxury-gold hover:text-luxury-gold transition-colors">
+                                                                      <i data-lucide="facebook" class="w-5 h-5"></i>
+                                                            </a>
+                                                            <a href="#"
+                                                                      class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-luxury-gold hover:text-luxury-gold transition-colors">
+                                                                      <i data-lucide="twitter" class="w-5 h-5"></i>
+                                                            </a>
+                                                  </div>
+                                        </div>
+
+                                        <div>
+                                                  <h4 class="font-bold mb-6 text-sm tracking-widest uppercase">
+                                                            Alış-Veriş</h4>
+                                                  <ul class="space-y-3 text-sm text-gray-400">
+                                                            <li><a href="#" class="hover:text-white transition-colors">Yeni
+                                                                                Gələnlər</a></li>
+                                                            <li><a href="#"
+                                                                                class="hover:text-white transition-colors">Trendlər</a>
+                                                            </li>
+                                                            <li><a href="#"
+                                                                                class="hover:text-white transition-colors">Endirimlər</a>
+                                                            </li>
+                                                            <li><a href="#"
+                                                                                class="hover:text-white transition-colors">Eksklüziv</a>
+                                                            </li>
+                                                  </ul>
+                                        </div>
+
+                                        <div>
+                                                  <h4 class="font-bold mb-6 text-sm tracking-widest uppercase">Kömək
+                                                  </h4>
+                                                  <ul class="space-y-3 text-sm text-gray-400">
+                                                            <li><a href="#" class="hover:text-white transition-colors">Ölçü
+                                                                                Cədvəli</a></li>
+                                                            <li><a href="#"
+                                                                                class="hover:text-white transition-colors">Çatdırılma</a>
+                                                            </li>
+                                                            <li><a href="#"
+                                                                                class="hover:text-white transition-colors">Qaytarma</a>
+                                                            </li>
+                                                            <li><a href="#" class="hover:text-white transition-colors">Tez-tez
+                                                                                Suallar</a></li>
+                                                  </ul>
+                                        </div>
+
+                                        <div>
+                                                  <h4 class="font-bold mb-6 text-sm tracking-widest uppercase">Əlaqə
+                                                  </h4>
+                                                  <ul class="space-y-3 text-sm text-gray-400">
+                                                            <li class="flex items-center gap-2">
+                                                                      <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                                                      Nizami küç. 45, Bakı
+                                                            </li>
+                                                            <li class="flex items-center gap-2">
+                                                                      <i data-lucide="phone" class="w-4 h-4"></i>
+                                                                      +994 12 345 67 89
+                                                            </li>
+                                                            <li class="flex items-center gap-2">
+                                                                      <i data-lucide="mail" class="w-4 h-4"></i>
+                                                                      style@voguex.az
+                                                            </li>
+                                                  </ul>
+                                        </div>
+                              </div>
+
+                              <div
+                                        class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                                        <p>&copy; 2026 VOGUE X. Bütün hüquqlar qorunur.</p>
+                                        <div class="flex gap-6">
+                                                  <a href="#" class="hover:text-white transition-colors">Məxfilik</a>
+                                                  <a href="#" class="hover:text-white transition-colors">Şərtlər</a>
+                                                  <a href="#" class="hover:text-white transition-colors">Kuki</a>
+                                        </div>
+                              </div>
+                    </div>
+          </footer>
+
+          <script src="script.js">
+                   
+          </script>
+</body>
+
+</html>

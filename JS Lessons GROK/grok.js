@@ -745,7 +745,7 @@ Hər məhsulu belə çap et: "Telefon - 1200 AZN" */
 
 
 
-function showExpensiveProducts(products, minPrice) {
+/* function showExpensiveProducts(products, minPrice) {
     
     let expensive = products.filter(function(product) {
         return product.price >= minPrice;   // >= işarəsi ilə bərabər də daxil olur
@@ -766,4 +766,189 @@ let products = [
 ];
 
 // Funksiyanı çağırırıq
-showExpensiveProducts(products, 400);
+showExpensiveProducts(products, 400); */
+
+
+// "Adım" adlı qutuya "Eltun" yazırıq
+/* localStorage.setItem("adim", "Eltun");
+
+let myName = localStorage.getItem("adim");
+console.log("Mənim adım " + myName);
+
+localStorage.setItem("surname", " Valiev");
+
+let myInfo = localStorage.getItem("surname");
+
+console.log("My surname" + myInfo);*/
+
+
+
+/*
+let name = localStorage.getItem("myName");
+let city = localStorage.getItem("myCity");
+let age = localStorage.getItem("myAge");
+
+console.log("Adım: " + name);
+console.log("Şəhərim: " + city);
+console.log("Yaşım: " + age);
+
+*/
+
+
+/* localStorage.setItem("myName", "Elton");
+localStorage.setItem("myCity", "Tbilisi");
+localStorage.setItem("myAge", "20");
+
+
+let name = localStorage.getItem("myName");
+let age = localStorage.getItem("myAge");
+let city = localStorage.getItem("myCity");
+
+
+console.log(`My name is ${name}`);
+console.log(`I am ${age} years old`);
+console.log(`My city ${city}`);
+
+
+localStorage.setItem("Adim", "Elton");
+localStorage.setItem("Seherim", "Tbilisi");
+localStorage.setItem("Yasim", "20");
+
+
+function saveMyInfo() {
+
+   let ad = localStorage.getItem("Adim");
+   let seher = localStorage.getItem("Seherim");
+   let yas = localStorage.getItem("Yasim")
+
+
+   console.log(`My name is ${ad}`);
+   console.log(`My city is ${seher}`);
+   console.log(`I am ${yas} years old`);
+}
+
+
+saveMyInfo();
+
+
+
+function saveMyInfo() {
+    
+    // Əvvəlcə sehrli qutuya məlumatları qoyuruq
+    localStorage.setItem("Adim", "Eltun");
+    localStorage.setItem("Seherim", "Tbilisi");
+    localStorage.setItem("Yasim", "25");
+
+    // İndi qutudan oxuyuruq
+    let ad = localStorage.getItem("Adim");
+    let seher = localStorage.getItem("Seherim");
+    let yas = localStorage.getItem("Yasim");
+
+    console.log(`My name is ${ad}`);
+    console.log(`My city is ${seher}`);
+    console.log(`I am ${yas} years old`);
+}
+
+// Funksiyanı çağırırıq
+saveMyInfo();
+localStorage.clear();
+
+// 1. Qutuya 3 ədəd kağız qoyuruq
+localStorage.setItem("Adim", "Eltun");
+localStorage.setItem("Seherim", "Tbilisi");
+localStorage.setItem("Yasim", "25");
+
+console.log("=== QUTU DOLUDUR ===");
+
+// 2. Qutudan oxuyuruq
+console.log("Adım:", localStorage.getItem("Adim"));
+console.log("Şəhərim:", localStorage.getItem("Seherim"));
+console.log("Yaşım:", localStorage.getItem("Yasim"));
+
+// 3. İndi qutunu tam təmizləyirik
+localStorage.clear();
+
+console.log("=== QUTU TƏMİZLƏNDİ ===");
+
+// 4. Yenidən oxumağa çalışırıq (indi boş olmalıdır)
+console.log("Adım:", localStorage.getItem("Adim"));        // null olacaq
+console.log("Şəhərim:", localStorage.getItem("Seherim"));  // null olacaq
+console.log("Yaşım:", localStorage.getItem("Yasim"));      // null olacaq */
+
+/*  
+
+
+
+let todos = [];
+
+// Tapşırıq əlavə et
+function addTodo(task) {
+    todos.push({ id: Date.now(), text: task });
+    saveToStorage();
+    console.log("Tapşırıq əlavə edildi: " + task);
+}
+
+// Bütün tapşırıqları göstər
+function showTodos() {
+    console.log("===== Mənim Tapşırıqlarım =====");
+    todos.forEach(todo => {
+        console.log("- " + todo.text);
+    });
+}
+
+// localStorage-a saxla
+function saveToStorage() {
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+// localStorage-dan oxu
+function loadFromStorage() {
+    let saved = localStorage.getItem("todos");
+    if (saved) {
+        todos = JSON.parse(saved);
+    }
+}
+
+// İlk dəfə yüklə
+loadFromStorage();
+
+addTodo("JavaScript öyrən");
+addTodo("Portfolio layihəsi et");
+showTodos();
+
+
+
+*/
+
+// Boş siyahı yaradırıq
+let todos = [];
+
+// 1. Tapşırıq əlavə etmək funksiyası
+function addTodo(task) {
+    todos.push(task);
+    console.log("✅ Tapşırıq əlavə edildi: " + task);
+}
+
+// 2. Bütün tapşırıqları göstərmək funksiyası
+function showTodos() {
+    console.log("===== Mənim Tapşırıqlarım =====");
+    if (todos.length === 0) {
+        console.log("Hələ heç bir tapşırıq yoxdur 😊");
+    } else {
+        todos.forEach(function(todo, index) {
+            console.log((index + 1) + ". " + todo);
+        });
+    }
+}
+
+
+addTodo("JavaScript öyrən");
+addTodo("Portfolio saytı qur");
+addTodo("Cox oyrenmek lazimdir");
+showTodos();
+
+
+
+
+
+
