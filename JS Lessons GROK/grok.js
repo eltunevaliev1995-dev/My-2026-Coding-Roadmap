@@ -920,7 +920,7 @@ showTodos();
 
 */
 
-// Boş siyahı yaradırıq
+/*  // Boş siyahı yaradırıq
 let todos = [];
 
 // 1. Tapşırıq əlavə etmək funksiyası
@@ -945,10 +945,298 @@ function showTodos() {
 addTodo("JavaScript öyrən");
 addTodo("Portfolio saytı qur");
 addTodo("Cox oyrenmek lazimdir");
+showTodos(); */
+
+
+/* // Boş siyahı yaradırıq
+let todos  = [];
+
+
+// 1. Tapşırıq əlavə etmək funksiyası
+function addTodo(task){
+
+   todos.push(task);
+   console.log("✅ Tapşırıq əlavə edildi: " + task);
+
+}
+
+
+// 2. Bütün tapşırıqları göstərmək funksiyası
+function showTodos(){
+
+   console.log("===== Mənim Tapşırıqlarım =====");
+   if(todos.length === 0) {
+
+     console.log("Hələ heç bir tapşırıq yoxdur 😊");
+
+   } else {
+
+      todos.forEach(function (todo, index){
+ 
+         console.log((index + 1) + ". " + todo);
+ 
+      });
+   }
+}
+
+
+addTodo("JavaScript öyrən");
+addTodo("Portfolio saytı qur");
+addTodo("Cox oyrenmek lazimdir");
+showTodos(); */
+
+
+/* // 1. Boş siyahı
+let todos = [];
+
+// 2. localStorage-dan yükləmək
+function loadTodos() {
+    let savedTodos = localStorage.getItem("todos");
+    if (savedTodos) {
+        todos = JSON.parse(savedTodos);
+    }
+}
+
+// 3. localStorage-a saxlamaq
+function saveTodos() {
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+// 4. Tapşırıq əlavə etmək
+function addTodo(task) {
+    todos.push({
+        id: Date.now(),      // hər tapşırığa unikal nömrə
+        text: task
+    });
+    saveTodos();             // avtomatik saxla
+    console.log("✅ Əlavə edildi: " + task);
+}
+
+// 5. Bütün tapşırıqları göstərmək
+function showTodos() {
+    console.log("===== MƏNİM TAPŞIRIQARIM =====");
+    if (todos.length === 0) {
+        console.log("Hələ heç bir tapşırıq yoxdur 😊");
+        return;
+    }
+    todos.forEach(function(todo, index) {
+        console.log((index + 1) + ". " + todo.text);
+    });
+}
+
+// 6. Tapşırıq silmək (yeni funksiya!)
+function deleteTodo(index) {
+    if (index < 1 || index > todos.length) {
+        console.log("❌ Yanlış nömrə!");
+        return;
+    }
+    let deleted = todos[index - 1].text;
+    todos.splice(index - 1, 1);   // silirik
+    saveTodos();                  // saxlayırıq
+    console.log("🗑️ Silindi: " + deleted);
+}
+
+// İlk dəfə yükləyirik
+loadTodos();
+
+
+addTodo("JavaScript dərsi bitir");
+addTodo("Portfolio üçün layihə düşün");
+showTodos();
+deleteTodo(1);     // birinci tapşırığı sil
+showTodos(); */
+
+// 1. Boş siyahı
+
+/* let todos = [];
+
+// 2. localStorage-dan yükləmək
+function loadTodos(){
+
+   let savedTodos = localStorage.getItem("todos");
+   if(savedTodos){
+
+      todos = JSON.parse(savedTodos);
+   }
+}
+
+
+// 3. localStorage-a saxlamaq
+function savedTodos(){
+
+   localStorage.getItem("todos", JSON.stringify(todos));
+}
+
+
+// 4. Tapşırıq əlavə etmək 
+function addTodo(task) {
+
+   todos.push({
+
+     id:Date.now(), // hər tapşırığa unikal nömrə
+     text: task
+
+   });
+   savedTodos();
+   console.log("✅ Əlavə edildi: " + task);
+}
+
+
+// 5. Bütün tapşırıqları göstərmək
+function showTodos(){
+
+   console.log("===== MƏNİM TAPŞIRIQARIM =====");
+   if(todos.length === 0){
+
+      console.log("Hələ heç bir tapşırıq yoxdur 😊");
+      return;
+
+   } 
+   todos.forEach(function(todo, index){
+
+      console.log((index + 1) + "." + todo.text)
+
+   });
+}
+
+
+// 6. Tapşırıq silmək (yeni funksiya!) 
+function deleteTodo(index){
+
+   if(index < 1 || index > todos.length){
+
+      console.log("❌ Yanlış nömrə!");
+      return;
+   }
+   let deleted = todos[index - 1].text;
+   todos.splice(index -1, 1); // silirik
+   savedTodos(); // saxlayırıq
+   console.log("🗑️ Silindi: " + deleted);
+
+}
+
+// İlk dəfə yükləyirik
+loadTodos();
+
+addTodo("JavaScript dərsi bitir");
+addTodo("Portfolio üçün layihə düşün");
+showTodos();
+deleteTodo(1);
+showTodos(); */
+
+// Boş bir siyahı yaradırıq. Bütün tapşırıqlarımız burada saxlanacaq.
+/*let todos = [];
+
+// localStorage-dan əvvəl saxlanmış tapşırıqları yükləyir.
+// Brauzer açılanda və ya səhifə yenilənəndə köhnə tapşırıqları geri qaytarır.
+
+function loadTodos(){
+
+   let saved = localStorage.getItem("todos");
+   if(saved){
+
+      todos = JSON.parse(saved);
+   }
+} */
+
+
+// Cari tapşırıq siyahısını localStorage-a saxlayır.
+// Bu sayədə brauzer bağlansa və ya kompüter söndürüləndə belə məlumat itmir.
+/*function saveTodos(){
+
+   localStorage.setItem("todos", JSON.stringify(todos));
+} */
+
+
+// Yeni tapşırıq əlavə edir.
+// Hər tapşırıq üçün id (unikal nömrə), text (mətn) və completed (bitmişdir ya yox) saxlayır.
+/* function addTodo(task) {
+
+   todos.push({
+
+      id: Date.now(), // hər tapşırığa fərqli unikal nömrə verir
+      text: task, // tapşırığın mətni
+      completed: false // yeni əlavə olunan tapşırıq avtomatik "bitməmiş" olur
+
+   });
+   saveTodos(); // dəyişikliyi dərhal localStorage-a saxlayır
+   console.log("✅ Əlavə edildi: " + task);
+
+} */
+
+
+/*// Bütün tapşırıqları console-da gözəl formatda göstərir.
+// Bitmiş tapşırıqların yanında ✅, bitməmişlərin yanında ⬜ işarəsi qoyur.
+function showTodos() {
+
+   console.log("===== MƏNİM TAPŞIRIQARIM =====");
+
+   if(todos.length === 0){
+
+      console.log("Hələ heç bir tapşırıq yoxdur 😊");
+      return;
+   }
+
+   todos.forEach(function(todo, index){
+    
+      let status = todo.completed ? "✅" : "⬜";
+      console.log((index + 1) + " . " + status + " " + todo.text);
+
+   });
+} */
+
+/* // Verilən nömrəyə görə tapşırığın "completed" vəziyyətini dəyişdirir (toggle edir).
+// Əgər bitmişdirsə → bitməmiş edir, bitməmişdirsə → bitmiş edir.
+function toggleComplete(index){
+
+   if(index < 1 || index > todos.length){
+
+      console.log("❌ Yanlış nömrə!");
+      return;
+   }
+
+
+// Bitmiş / bitməmiş vəziyyətini dəyişdirir
+todos[index - 1].completed = !todos[index - 1].completed;
+
+saveTodos(); // dəyişikliyi localStorage-a saxlayır
+
+
+let todo = todos[index - 1];
+console.log(todo.completed
+
+   ? "✅ Bitmiş kimi işarələndi: " + todo.text
+   : "⬜ Bitməmiş kimi işarələndi: " + todo.text);
+
+
+}
+
+
+// Proqram ilk dəfə işə düşən kimi localStorage-dan köhnə tapşırıqları yükləyir.
+loadTodos();
+
+addTodo("JavaScript öyrən");
+addTodo("Portfolio layihəsi et");
 showTodos();
 
+toggleComplete(1); // birinci tapşırığı bitmiş et
 
+toggleComplete(1); // yenidən bitməmiş et
+showTodos(); */
 
+// ======================
+// TODO APP - TAM KOD (İzahlarla)
+// ======================
 
+// Boş siyahı yaradırıq. Bütün tapşırıqlar burada saxlanacaq.
+// ======================
+// TODO APP - TAM VƏ TƏMİZ KOD
+// ======================
+
+// 1. Əsas dəyişən
+// Bütün tapşırıqlarımız bu massivdə (array) saxlanacaq
+// 1. Əsas massiv (the array - das Array)
+// 1. VƏZİYYƏT (The State - der Zustand)
+// Bütün tapşırıqlarımızı saxlayacağımız əsas siyahı.
 
 

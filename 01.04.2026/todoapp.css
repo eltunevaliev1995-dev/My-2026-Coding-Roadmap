@@ -1,0 +1,183 @@
+/* 1. ÜMUMİ AYARLAR (The Settings - die Einstellungen) */
+* {
+
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+
+}
+
+
+
+
+body {
+
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          /* Daha müasir şrift */
+          background: linear-gradient(135deg, #0f172a, #1e293b);
+          /* Professional tünd fon */
+          color: #f1f5f9;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+
+}
+
+
+/* 2. KONTEYNER (The Container - der Behälter) */
+.container {
+
+          width: 380px;
+          /* Bir az genişləndirdik */
+          background: rgba(30, 41, 59, 0.7);
+          /* Şəffaf tünd fon */
+          padding: 30px;
+          border-radius: 16px;
+          box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+          backdrop-filter: blur(10px);
+          /* Arxa fonu bulandıran effekt */
+          border: 1px solid rgab(255, 255, 255, 0.1);
+          transition: transform 0.3s ease;
+
+}
+
+
+
+.container:hover {
+
+          transform: translateY(-5px);
+}
+
+
+
+/* 3. BAŞLIQ (The Heading - die Überschrift) */
+
+h1 {
+
+          font-size: 1.8em;
+          text-align: center;
+          margin-bottom: 20px;
+          color: #38bdf8;
+          /* Gözəl mavi rəng */
+          letter-spacing: 1px;
+
+
+}
+
+
+/* 4. INPUT VƏ DÜYMƏ (The Input & Button - die Eingabe & der Knopf) */
+input {
+
+          width: 100%;
+          padding: 12px;
+          border-radius: 8px;
+          border: 1px solid #334155;
+          background: #0f172a;
+          color: #fff;
+          margin-bottom: 15px;
+          outline: none;
+          transition: border-color 0.3s;
+
+}
+
+
+input:focus {
+
+          border-color: #38bdf8;
+
+}
+
+
+
+button {
+
+          width: 100%;
+          padding: 12px;
+          background: #0ea5e9;
+          /* Daha parlaq mavi */
+          border-radius: 8px;
+          border: none;
+          color: #fff;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.3s;
+          margin-bottom: 15px;
+
+}
+
+
+button:hover {
+
+          background: #0284c7;
+          transform: scale(1.02);
+
+}
+
+
+/* 5. TARİXÇƏ (The Log - das Protokoll) */
+.log {
+
+  background:rgba(15, 23, 42, 0.8);  
+  padding: 12px;
+  font-size: 13px;      
+  color: #94a3b8;
+  border-left: 4px solid #38bdf8;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  min-height: 40px;
+
+}
+
+
+/* 6. SİYAHI (The List - die Liste) */ 
+ul {
+
+  list-style: none;  
+
+}
+
+
+li {
+
+  background: #1e293b;
+  border: 1px solid #334155;
+  margin-bottom: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  transition: 0.3s;
+
+}
+
+
+
+li:hover {
+
+  background: #334155;   
+  border-color: #38bdf8;   
+
+}
+
+/* 7. SİLMƏ DÜYMƏSİ (The Delete Button - der Löschknopf) */ 
+
+.del-btn {
+
+   background: #ef4444; /* Müasir qırmızı */
+   padding: 6px 12px;
+   font-size: 11px;
+   border-radius: 4px;
+   text-transform: uppercase;
+   font-weight: bold;
+   transition: background 0.3s;
+
+}
+
+
+.del-btn:hover {
+
+  background: #dc2626;
+  
+}

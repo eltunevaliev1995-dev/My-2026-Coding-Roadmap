@@ -1,766 +1,1388 @@
 <!DOCTYPE html>
-<html lang="az" class="scroll-smooth">
+<html lang="az">
 
 <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>VOGUE X 2026 - Gələcəyin Moda Evi</title>
-          <script src="https://cdn.tailwindcss.com"></script>
-          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-          <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
-                    rel="stylesheet">
-                    <link rel="stylesheet" href="style.css">
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-          <script src="https://unpkg.com/lucide@latest"></script>
-          <script>
-                    tailwind.config = {
-                              theme: {
-                                        extend: {
-                                                  fontFamily: {
-                                                            sans: ['Plus Jakarta Sans', 'sans-serif'],
-                                                            serif: ['Cormorant Garamond', 'serif'],
-                                                  },
-                                                  colors: {
-                                                            'fashion-black': '#0a0a0a',
-                                                            'fashion-gray': '#1a1a1a',
-                                                            'luxury-gold': '#d4af37',
-                                                            'luxury-rose': '#e8b4b8',
-                                                            'neon-purple': '#b026ff',
-                                                            'sustainable-green': '#00d084',
-                                                  },
-                                                  animation: {
-                                                            'marquee': 'marquee 25s linear infinite',
-                                                            'float': 'float 6s ease-in-out infinite',
-                                                            'shimmer': 'shimmer 2s linear infinite',
-                                                            'spin-slow': 'spin 12s linear infinite',
-                                                  },
-                                                  keyframes: {
-                                                            marquee: {
-                                                                      '0%': { transform: 'translateX(0%)' },
-                                                                      '100%': { transform: 'translateX(-100%)' },
-                                                            },
-                                                            float: {
-                                                                      '0%, 100%': { transform: 'translateY(0)' },
-                                                                      '50%': { transform: 'translateY(-20px)' },
-                                                            },
-                                                            shimmer: {
-                                                                      '0%': { backgroundPosition: '-1000px 0' },
-                                                                      '100%': { backgroundPosition: '1000px 0' },
-                                                            }
-                                                  }
-                                        }
-                              }
-                    }
-          </script>
-          
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎰 Vegas Slot - Real Casino</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gold: #ffd700;
+      --gold-dark: #b8860b;
+      --casino-red: #8b0000;
+      --casino-dark: #1a0a0a;
+      --neon-blue: #00d9ff;
+      --neon-pink: #ff00ff;
+    }
+
+    body {
+      font-family: 'Roboto Mono', monospace;
+      background:
+        radial-gradient(ellipse at top, #2d1b4e 0%, transparent 50%),
+        radial-gradient(ellipse at bottom, #4a1c40 0%, transparent 50%),
+        linear-gradient(180deg, #0d0221 0%, #1a0a2e 50%, #0d0221 100%);
+      min-height: 100vh;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* CRT Effect */
+    .crt::before {
+      content: " ";
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      background-size: 100% 2px, 3px 100%;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* Header */
+    .casino-header {
+      text-align: center;
+      padding: 1rem;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), transparent);
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .casino-title {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      background: linear-gradient(180deg, #fff 0%, var(--gold) 50%, var(--gold-dark) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+      letter-spacing: 5px;
+    }
+
+    .casino-subtitle {
+      color: var(--neon-blue);
+      font-size: 0.9rem;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+      animation: flicker 2s infinite;
+    }
+
+    @keyframes flicker {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.8;
+      }
+    }
+
+    /* Main Container */
+    .game-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Credit Panel */
+    .credit-panel {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .credit-display {
+      flex: 1;
+      min-width: 200px;
+      background: linear-gradient(145deg, #000, #1a1a1a);
+      border: 3px solid var(--gold);
+      border-radius: 15px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow:
+        0 0 20px rgba(255, 215, 0, 0.2),
+        inset 0 2px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .credit-label {
+      font-size: 0.8rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    .credit-value {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .credit-value.win {
+      animation: creditWin 0.5s ease;
+      color: #00ff00;
+    }
+
+    @keyframes creditWin {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+        color: #00ff00;
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Slot Machine Cabinet */
+    .slot-cabinet {
+      background: linear-gradient(145deg, #2a1810, #1a0f0a);
+      border-radius: 30px;
+      padding: 3rem 2rem;
+      border: 8px solid;
+      border-image: linear-gradient(180deg, var(--gold), #8b4513, var(--gold)) 1;
+      box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.8),
+        inset 0 5px 20px rgba(0, 0, 0, 0.5),
+        0 0 50px rgba(255, 215, 0, 0.1);
+      position: relative;
+    }
+
+    .cabinet-light {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: #000;
+      padding: 0.5rem 2rem;
+      border-radius: 20px;
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+      font-size: 1.2rem;
+      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+    }
+
+    /* Reel Window */
+    .reel-window {
+      background: #000;
+      border-radius: 20px;
+      padding: 2rem;
+      border: 5px solid #333;
+      box-shadow:
+        inset 0 10px 30px rgba(0, 0, 0, 0.8),
+        0 5px 20px rgba(255, 255, 255, 0.1);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .payline-indicator {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #00ff00, transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+      box-shadow: 0 0 20px #00ff00;
+      z-index: 10;
+    }
+
+    .payline-indicator.active {
+      opacity: 1;
+      animation: paylineFlash 0.5s ease infinite;
+    }
+
+    @keyframes paylineFlash {
+
+      0%,
+      100% {
+        opacity: 0.5;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .payline-indicator.top {
+      top: 33%;
+    }
+
+    .payline-indicator.middle {
+      top: 50%;
+    }
+
+    .payline-indicator.bottom {
+      top: 67%;
+    }
+
+    .reels-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      perspective: 1000px;
+    }
+
+    .reel {
+      width: 160px;
+      height: 200px;
+      background: linear-gradient(180deg, #fff 0%, #e0e0e0 50%, #fff 100%);
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        inset 0 2px 5px rgba(255, 255, 255, 0.5);
+      border: 3px solid #666;
+    }
+
+    .reel::before,
+    .reel::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 40px;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .reel::before {
+      top: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+    }
+
+    .reel::after {
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+    }
+
+    .reel-strip {
+      position: absolute;
+      width: 100%;
+      transition: transform 0.1s linear;
+    }
+
+    .symbol {
+      width: 160px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      background: linear-gradient(180deg, #fff 0%, #f5f5f5 50%, #fff 100%);
+      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .symbol.wild {
+      background: linear-gradient(180deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+      box-shadow: inset 0 0 30px rgba(255, 215, 0, 0.5);
+    }
+
+    .symbol.scatter {
+      background: linear-gradient(180deg, #ff6b6b 0%, #ee5a24 50%, #ff6b6b 100%);
+      animation: scatterPulse 2s infinite;
+    }
+
+    @keyframes scatterPulse {
+
+      0%,
+      100% {
+        box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.3);
+      }
+
+      50% {
+        box-shadow: inset 0 0 40px rgba(255, 0, 0, 0.6);
+      }
+    }
+
+    /* Control Panel */
+    .control-panel {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .bet-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .bet-label {
+      text-align: center;
+      color: var(--gold);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .bet-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .bet-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      background: linear-gradient(145deg, #2a1810, #1a0f0a);
+      color: var(--gold);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bet-btn:hover:not(:disabled) {
+      background: var(--gold);
+      color: #000;
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .bet-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .bet-amount {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 2rem;
+      color: #fff;
+      min-width: 100px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      border: 2px solid var(--gold);
+    }
+
+    /* Spin Button */
+    .spin-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .spin-btn {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 8px solid var(--gold);
+      background:
+        radial-gradient(circle at 30% 30%, #ff6b6b, #dc143c),
+        linear-gradient(180deg, #dc143c, #8b0000);
+      color: white;
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      cursor: pointer;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      box-shadow:
+        0 15px 40px rgba(220, 20, 60, 0.5),
+        inset 0 5px 20px rgba(255, 255, 255, 0.3),
+        0 0 30px rgba(255, 0, 0, 0.3);
+      transition: all 0.3s;
+    }
+
+    .spin-btn::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      right: -15px;
+      bottom: -15px;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 215, 0, 0.3);
+      animation: spinRing 3s linear infinite;
+    }
+
+    @keyframes spinRing {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .spin-btn:hover:not(:disabled) {
+      transform: scale(1.05);
+      box-shadow:
+        0 20px 50px rgba(220, 20, 60, 0.7),
+        inset 0 5px 20px rgba(255, 255, 255, 0.5),
+        0 0 50px rgba(255, 0, 0, 0.5);
+    }
+
+    .spin-btn:active:not(:disabled) {
+      transform: scale(0.95);
+    }
+
+    .spin-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      filter: grayscale(0.5);
+    }
+
+    .spin-btn.spinning {
+      animation: buttonSpin 0.5s linear infinite;
+    }
+
+    @keyframes buttonSpin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Quick Bet Buttons */
+    .quick-bets {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .quick-bet {
+      padding: 0.5rem 1rem;
+      background: rgba(255, 215, 0, 0.1);
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .quick-bet:hover,
+    .quick-bet.active {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* Info Panel */
+    .info-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+
+    .info-label {
+      color: #888;
+    }
+
+    .info-value {
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    /* Win Display */
+    .win-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      animation: fadeIn 0.3s;
+    }
+
+    .win-overlay.show {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .win-display {
+      text-align: center;
+      animation: winZoom 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    @keyframes winZoom {
+      from {
+        transform: scale(0) rotate(-10deg);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    .win-title {
+      font-family: 'Cinzel', serif;
+      font-size: 4rem;
+      color: var(--gold);
+      text-shadow: 0 0 50px rgba(255, 215, 0, 0.8);
+      margin-bottom: 1rem;
+    }
+
+    .win-amount {
+      font-size: 6rem;
+      font-weight: 900;
+      background: linear-gradient(180deg, #fff, var(--gold), var(--gold-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      text-shadow: none;
+      filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.5));
+    }
+
+    .win-multiplier {
+      font-size: 2rem;
+      color: var(--neon-blue);
+      margin-bottom: 2rem;
+    }
+
+    .continue-btn {
+      padding: 1rem 3rem;
+      background: linear-gradient(145deg, var(--gold), var(--gold-dark));
+      color: #000;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .continue-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+    }
+
+    /* Paytable Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1500;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+    .modal {
+      background: linear-gradient(145deg, #2a1810, #1a0f0a);
+      border: 3px solid var(--gold);
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .modal-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+    }
+
+    .close-modal {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .paytable-grid {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .paytable-row {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      align-items: center;
+      padding: 0.75rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      gap: 1rem;
+    }
+
+    .paytable-symbol {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    .paytable-name {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .paytable-odds {
+      color: var(--gold);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1.1rem;
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .action-btn {
+      padding: 0.75rem 1.5rem;
+      background: rgba(255, 215, 0, 0.1);
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .action-btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .casino-title {
+        font-size: 2rem;
+      }
+
+      .reel {
+        width: 100px;
+        height: 130px;
+      }
+
+      .symbol {
+        width: 100px;
+        height: 130px;
+        font-size: 4rem;
+      }
+
+      .spin-btn {
+        width: 140px;
+        height: 140px;
+        font-size: 1.5rem;
+      }
+
+      .control-panel {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .credit-panel {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
-<body class="antialiased overflow-x-hidden">
+<body class="crt">
+  <!-- Win Overlay -->
+  <div class="win-overlay" id="winOverlay">
+    <div class="win-display">
+      <div class="win-title" id="winTitle">BIG WIN!</div>
+      <div class="win-amount" id="winAmount">0</div>
+      <div class="win-multiplier" id="winMultiplier"></div>
+      <button class="continue-btn" onclick="closeWin()">Davam Et</button>
+    </div>
+  </div>
 
-          <!-- Custom Cursor -->
-          <div class="cursor-follower hidden lg:block" id="cursor"></div>
+  <!-- Paytable Modal -->
+  <div class="modal-overlay" id="paytableModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">📜 Ödəniş Cədvəli</h2>
+        <button class="close-modal" onclick="togglePaytable()">×</button>
+      </div>
+      <div class="paytable-grid" id="paytableGrid"></div>
+    </div>
+  </div>
 
-          <!-- Top Bar -->
-          <div class="bg-fashion-black text-white text-xs py-2 overflow-hidden">
-                    <div class="flex whitespace-nowrap animate-marquee">
-                              <span class="mx-8">🚚 PULSUZ ÇATDIRILMA — 200₼+ SİFARİŞLƏR ÜÇÜN</span>
-                              <span class="mx-8">✨ YENİ 2026 YAZ KOLLEKSİYASI</span>
-                              <span class="mx-8">🌱 SUSTAINABLE FASHION — EKO-DOST</span>
-                              <span class="mx-8">🎁 İLK SİFARİŞƏ 20% ENDİRİM — KOD: VOGUE2026</span>
-                              <span class="mx-8">🚚 PULSUZ ÇATDIRILMA — 200₼+ SİFARİŞLƏR ÜÇÜN</span>
-                              <span class="mx-8">✨ YENİ 2026 YAZ KOLLEKSİYASI</span>
-                              <span class="mx-8">🌱 SUSTAINABLE FASHION — EKO-DOST</span>
-                              <span class="mx-8">🎁 İLK SİFARİŞƏ 20% ENDİRİM — KOD: VOGUE2026</span>
-                    </div>
+  <header class="casino-header">
+    <h1 class="casino-title">🏆 VEGAS SLOT 🏆</h1>
+    <p class="casino-subtitle">★ Premium Casino Experience ★</p>
+  </header>
+
+  <div class="game-wrapper">
+    <!-- Credit Panel -->
+    <div class="credit-panel">
+      <div class="credit-display">
+        <div class="credit-label">💰 Balans</div>
+        <div class="credit-value" id="balanceDisplay">1000</div>
+      </div>
+      <div class="credit-display">
+        <div class="credit-label">🎯 Mərc</div>
+        <div class="credit-value" id="betDisplay">10</div>
+      </div>
+      <div class="credit-display">
+        <div class="credit-label">💎 Son Qələbə</div>
+        <div class="credit-value" id="lastWinDisplay">0</div>
+      </div>
+    </div>
+
+    <!-- Slot Machine -->
+    <div class="slot-cabinet">
+      <div class="cabinet-light">MEGA JACKPOT</div>
+
+      <div class="reel-window">
+        <div class="payline-indicator top" id="paylineTop"></div>
+        <div class="payline-indicator middle" id="paylineMiddle"></div>
+        <div class="payline-indicator bottom" id="paylineBottom"></div>
+
+        <div class="reels-container">
+          <div class="reel">
+            <div class="reel-strip" id="reel1"></div>
           </div>
-
-          <!-- Navigation -->
-          <nav class="fixed w-full z-50 transition-all duration-500" id="navbar">
-                    <div class="glass-luxury border-b border-gray-200 dark:border-gray-800">
-                              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                        <div class="flex justify-between items-center h-20">
-                                                  <!-- Mobile Menu -->
-                                                  <button class="lg:hidden p-2" onclick="toggleMobileMenu()">
-                                                            <i data-lucide="menu" class="w-6 h-6"></i>
-                                                  </button>
-
-                                                  <!-- Logo -->
-                                                  <div class="flex items-center gap-2 cursor-pointer group">
-                                                            <span
-                                                                      class="font-serif text-3xl italic font-bold text-luxury-gradient tracking-wider group-hover:tracking-widest transition-all">VOGUE
-                                                                      X</span>
-                                                            <span
-                                                                      class="text-xs font-bold bg-fashion-black text-white px-2 py-1 rounded">2026</span>
-                                                  </div>
-
-                                                  <!-- Desktop Menu -->
-                                                  <div
-                                                            class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
-                                                            <a href="#new"
-                                                                      class="hover:text-luxury-gold transition-colors relative group">
-                                                                      YENİ
-                                                                      <span
-                                                                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-luxury-gold transition-all group-hover:w-full"></span>
-                                                            </a>
-                                                            <a href="#women"
-                                                                      class="hover:text-luxury-gold transition-colors relative group">
-                                                                      QADIN
-                                                                      <span
-                                                                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-luxury-gold transition-all group-hover:w-full"></span>
-                                                            </a>
-                                                            <a href="#men"
-                                                                      class="hover:text-luxury-gold transition-colors relative group">
-                                                                      KİŞİ
-                                                                      <span
-                                                                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-luxury-gold transition-all group-hover:w-full"></span>
-                                                            </a>
-                                                            <a href="#accessories"
-                                                                      class="hover:text-luxury-gold transition-colors relative group">
-                                                                      AKSESUAR
-                                                                      <span
-                                                                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-luxury-gold transition-all group-hover:w-full"></span>
-                                                            </a>
-                                                            <a href="#sustainable"
-                                                                      class="hover:text-sustainable-green transition-colors relative group flex items-center gap-1">
-                                                                      <i data-lucide="leaf" class="w-4 h-4"></i>
-                                                                      EKO
-                                                                      <span
-                                                                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-sustainable-green transition-all group-hover:w-full"></span>
-                                                            </a>
-                                                  </div>
-
-                                                  <!-- Actions -->
-                                                  <div class="flex items-center gap-4">
-                                                            <button class="hidden md:block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
-                                                                      onclick="toggleSearch()">
-                                                                      <i data-lucide="search" class="w-5 h-5"></i>
-                                                            </button>
-
-                                                            <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors relative"
-                                                                      onclick="toggleWishlist()">
-                                                                      <i data-lucide="heart" class="w-5 h-5"></i>
-                                                                      <span id="wishlistBadge"
-                                                                                class="absolute -top-1 -right-1 w-4 h-4 bg-luxury-rose text-white text-xs rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
-                                                            </button>
-
-                                                            <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors relative"
-                                                                      onclick="toggleCart()">
-                                                                      <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-                                                                      <span id="cartBadge"
-                                                                                class="absolute -top-1 -right-1 w-5 h-5 bg-fashion-black text-luxury-gold text-xs font-bold rounded-full flex items-center justify-center opacity-0 transition-opacity border border-luxury-gold">0</span>
-                                                            </button>
-
-                                                            <button
-                                                                      class="hidden md:flex items-center gap-2 px-4 py-2 bg-fashion-black text-white rounded-full hover:bg-gray-800 transition-colors text-sm font-medium">
-                                                                      <i data-lucide="user" class="w-4 h-4"></i>
-                                                                      Daxil ol
-                                                            </button>
-
-                                                            <button onclick="toggleDarkMode()"
-                                                                      class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
-                                                                      <i data-lucide="moon"
-                                                                                class="w-5 h-5 dark:hidden"></i>
-                                                                      <i data-lucide="sun"
-                                                                                class="w-5 h-5 hidden dark:block"></i>
-                                                            </button>
-                                                  </div>
-                                        </div>
-                              </div>
-                    </div>
-          </nav>
-
-          <!-- Search Overlay -->
-          <div id="searchOverlay"
-                    class="fixed inset-0 z-50 bg-white/95 dark:bg-black/95 backdrop-blur-xl hidden opacity-0 transition-opacity duration-300">
-                    <div class="max-w-4xl mx-auto pt-32 px-4">
-                              <div class="relative">
-                                        <input type="text" id="searchInput"
-                                                  placeholder="Kolleksiya, rəng, ölçü axtarın..."
-                                                  class="w-full text-4xl md:text-6xl font-serif border-b-2 border-gray-200 dark:border-gray-800 bg-transparent py-4 focus:outline-none focus:border-luxury-gold transition-colors placeholder:text-gray-300 dark:placeholder:text-gray-700">
-                                        <button onclick="toggleSearch()"
-                                                  class="absolute right-0 top-1/2 -translate-y-1/2 p-4 hover:rotate-90 transition-transform">
-                                                  <i data-lucide="x" class="w-8 h-8"></i>
-                                        </button>
-                              </div>
-                              <div class="mt-8 flex flex-wrap gap-3 text-sm text-gray-500">
-                                        <span>Populyar:</span>
-                                        <button onclick="quickSearch('summer dress')"
-                                                  class="hover:text-luxury-gold transition-colors underline">Yay
-                                                  donları</button>
-                                        <button onclick="quickSearch('linen')"
-                                                  class="hover:text-luxury-gold transition-colors underline">Kətan</button>
-                                        <button onclick="quickSearch('oversized')"
-                                                  class="hover:text-luxury-gold transition-colors underline">Oversized</button>
-                                        <button onclick="quickSearch('sustainable')"
-                                                  class="hover:text-sustainable-green transition-colors underline">Eko-dost</button>
-                              </div>
-                    </div>
+          <div class="reel">
+            <div class="reel-strip" id="reel2"></div>
           </div>
-
-          <!-- Hero Section -->
-          <section class="relative min-h-screen pt-20 overflow-hidden">
-                    <div class="absolute inset-0 grid grid-cols-1 lg:grid-cols-2">
-                              <div class="relative overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1200&q=80"
-                                                  alt="Fashion Model"
-                                                  class="w-full h-full object-cover parallax-image scale-110"
-                                                  id="heroImage1">
-                                        <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent">
-                                        </div>
-                              </div>
-                              <div class="hidden lg:block relative overflow-hidden bg-fashion-gray">
-                                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200&q=80"
-                                                  alt="Fashion Detail"
-                                                  class="w-full h-full object-cover parallax-image scale-110 opacity-80"
-                                                  id="heroImage2">
-                              </div>
-                    </div>
-
-                    <div class="relative z-10 max-w-7xl mx-auto px-4 h-full flex items-center min-h-screen">
-                              <div class="max-w-2xl space-y-8 pt-20">
-                                        <div class="space-y-4">
-                                                  <p
-                                                            class="text-luxury-gold font-medium tracking-widest text-sm uppercase animate-fade-in">
-                                                            2026 Yaz/Yay Kolleksiyası</p>
-                                                  <h1
-                                                            class="font-serif text-5xl md:text-7xl lg:text-8xl font-light leading-tight text-white mix-blend-difference">
-                                                            <em class="not-italic font-bold">Minimal</em><br>
-                                                            <span class="italic">Elegance</span>
-                                                  </h1>
-                                        </div>
-
-                                        <p class="text-lg md:text-xl text-gray-200 max-w-md leading-relaxed font-light">
-                                                  Sürdürülebilir modanın zirvəsi. Hər parça bir hekayə, hər toxuma bir
-                                                  təcrübə.
-                                        </p>
-
-                                        <div class="flex flex-wrap gap-4">
-                                                  <button onclick="scrollToCollection()"
-                                                            class="group px-8 py-4 bg-white text-fashion-black rounded-full font-medium hover:bg-luxury-gold hover:text-white transition-all duration-300 flex items-center gap-3">
-                                                            Kolleksiyanı Keşf Et
-                                                            <i data-lucide="arrow-right"
-                                                                      class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                                                  </button>
-                                                  <button
-                                                            class="px-8 py-4 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-fashion-black transition-all duration-300 flex items-center gap-3">
-                                                            <i data-lucide="play" class="w-5 h-5"></i>
-                                                            Lookbook
-                                                  </button>
-                                        </div>
-
-                                        <div class="flex items-center gap-8 pt-8 text-white/80 text-sm">
-                                                  <div class="flex items-center gap-2">
-                                                            <i data-lucide="check-circle"
-                                                                      class="w-5 h-5 text-sustainable-green"></i>
-                                                            <span>100% Organik</span>
-                                                  </div>
-                                                  <div class="flex items-center gap-2">
-                                                            <i data-lucide="check-circle"
-                                                                      class="w-5 h-5 text-sustainable-green"></i>
-                                                            <span>Zero Waste</span>
-                                                  </div>
-                                                  <div class="flex items-center gap-2">
-                                                            <i data-lucide="check-circle"
-                                                                      class="w-5 h-5 text-sustainable-green"></i>
-                                                            <span>Fair Trade</span>
-                                                  </div>
-                                        </div>
-                              </div>
-                    </div>
-
-                    <!-- Scroll Indicator -->
-                    <div
-                              class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 animate-bounce">
-                              <span class="text-xs tracking-widest uppercase">Aşağı</span>
-                              <i data-lucide="mouse" class="w-5 h-5"></i>
-                    </div>
-          </section>
-
-          <!-- AI Stylist Widget -->
-          <div class="fixed bottom-8 right-8 z-40 hidden lg:block">
-                    <button onclick="toggleAIStylist()"
-                              class="ai-stylist-bubble w-16 h-16 rounded-full try-on-btn text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-transform relative overflow-hidden group">
-                              <i data-lucide="sparkles" class="w-7 h-7 relative z-10"></i>
-                              <div
-                                        class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform">
-                              </div>
-                    </button>
-                    <div
-                              class="absolute -top-12 right-0 bg-fashion-black text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                              AI Stylist
-                    </div>
+          <div class="reel">
+            <div class="reel-strip" id="reel3"></div>
           </div>
+        </div>
+      </div>
 
-          <!-- AI Stylist Modal -->
-          <div id="aiStylistModal"
-                    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-                    <div class="bg-white dark:bg-fashion-gray rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-hidden shadow-2xl transform scale-95 opacity-0 transition-all duration-300"
-                              id="aiStylistContent">
-                              <div
-                                        class="p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center bg-gradient-to-r from-neon-purple/10 to-transparent">
-                                        <div class="flex items-center gap-3">
-                                                  <div
-                                                            class="w-10 h-10 rounded-full try-on-bg flex items-center justify-center">
-                                                            <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
-                                                  </div>
-                                                  <div>
-                                                            <h3 class="font-bold">AI Moda Stilist</h3>
-                                                            <p class="text-xs text-gray-500">Powered by GPT-7 Fashion
-                                                            </p>
-                                                  </div>
-                                        </div>
-                                        <button onclick="toggleAIStylist()"
-                                                  class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">
-                                                  <i data-lucide="x" class="w-5 h-5"></i>
-                                        </button>
-                              </div>
-
-                              <div class="p-6 overflow-y-auto max-h-[50vh] space-y-4" id="aiChat">
-                                        <div class="flex gap-3">
-                                                  <div
-                                                            class="w-8 h-8 rounded-full try-on-bg flex items-center justify-center flex-shrink-0">
-                                                            <i data-lucide="sparkles" class="w-4 h-4 text-white"></i>
-                                                  </div>
-                                                  <div
-                                                            class="bg-gray-100 dark:bg-gray-800 rounded-2xl rounded-tl-none px-4 py-3 text-sm max-w-[80%]">
-                                                            Salam! Mən sizin şəxsi moda stilistinizəm. Bugün hansı
-                                                            mərasim üçün geyinmək istəyirsiniz?
-                                                  </div>
-                                        </div>
-                              </div>
-
-                              <div
-                                        class="p-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
-                                        <div class="flex gap-2">
-                                                  <input type="text" id="aiInput"
-                                                            placeholder="Məsələn: 'İş görüşməsi üçün kostyum axtarıram...'"
-                                                            class="flex-1 bg-white dark:bg-fashion-gray border border-gray-300 dark:border-gray-700 rounded-full px-4 py-3 text-sm focus:outline-none focus:border-neon-purple"
-                                                            onkeypress="if(event.key==='Enter') sendAIMessage()">
-                                                  <button onclick="sendAIMessage()"
-                                                            class="w-12 h-12 rounded-full try-on-btn text-white flex items-center justify-center hover:scale-105 transition-transform">
-                                                            <i data-lucide="send" class="w-5 h-5"></i>
-                                                  </button>
-                                        </div>
-                                        <div class="flex gap-2 mt-3 overflow-x-auto pb-2">
-                                                  <button onclick="quickAI('Ofis üçün')"
-                                                            class="px-4 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full text-xs whitespace-nowrap hover:border-neon-purple transition-colors">Ofis
-                                                            üçün</button>
-                                                  <button onclick="quickAI('Gecə klubu')"
-                                                            class="px-4 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full text-xs whitespace-nowrap hover:border-neon-purple transition-colors">Gecə
-                                                            klubu</button>
-                                                  <button onclick="quickAI('Toy məclisi')"
-                                                            class="px-4 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full text-xs whitespace-nowrap hover:border-neon-purple transition-colors">Toy
-                                                            məclisi</button>
-                                                  <button onclick="quickAI('Gündəlik')"
-                                                            class="px-4 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full text-xs whitespace-nowrap hover:border-neon-purple transition-colors">Gündəlik</button>
-                                        </div>
-                              </div>
-                    </div>
+      <div class="control-panel">
+        <div class="bet-section">
+          <div class="bet-label">Mərc Məbləği</div>
+          <div class="bet-controls">
+            <button class="bet-btn" onclick="changeBet(-1)" id="btnMinus">−</button>
+            <div class="bet-amount" id="currentBet">10</div>
+            <button class="bet-btn" onclick="changeBet(1)" id="btnPlus">+</button>
           </div>
-
-          <!-- Filter Bar -->
-          <section
-                    class="sticky top-20 z-30 bg-white/80 dark:bg-fashion-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 py-4">
-                    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between gap-4 overflow-x-auto">
-                              <div class="flex items-center gap-2">
-                                        <button onclick="toggleFilters()"
-                                                  class="flex items-center gap-2 px-4 py-2 bg-fashion-black text-white rounded-full text-sm font-medium hover:bg-gray-800 transition-colors whitespace-nowrap">
-                                                  <i data-lucide="sliders-horizontal" class="w-4 h-4"></i>
-                                                  Filter
-                                        </button>
-
-                                        <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-2"></div>
-
-                                        <div class="flex gap-2" id="categoryFilters">
-                                                  <button onclick="filterCategory('all')"
-                                                            class="filter-pill active px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium whitespace-nowrap">Hamısı</button>
-                                                  <button onclick="filterCategory('dresses')"
-                                                            class="filter-pill px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium whitespace-nowrap">Donlar</button>
-                                                  <button onclick="filterCategory('tops')"
-                                                            class="filter-pill px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium whitespace-nowrap">Üst
-                                                            geyimlər</button>
-                                                  <button onclick="filterCategory('bottoms')"
-                                                            class="filter-pill px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium whitespace-nowrap">Alt
-                                                            geyimlər</button>
-                                                  <button onclick="filterCategory('outerwear')"
-                                                            class="filter-pill px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium whitespace-nowrap">Gödəkçələr</button>
-                                                  <button onclick="filterCategory('sustainable')"
-                                                            class="filter-pill px-4 py-2 rounded-full border border-sustainable-green text-sustainable-green text-sm font-medium whitespace-nowrap flex items-center gap-1">
-                                                            <i data-lucide="leaf" class="w-3 h-3"></i>
-                                                            Eko
-                                                  </button>
-                                        </div>
-                              </div>
-
-                              <div class="flex items-center gap-4">
-                                        <select id="sortSelect" onchange="sortProducts()"
-                                                  class="bg-transparent border border-gray-300 dark:border-gray-700 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-luxury-gold cursor-pointer">
-                                                  <option value="newest">Ən Yeni</option>
-                                                  <option value="price-low">Qiymət: Aşağıdan Yuxarı</option>
-                                                  <option value="price-high">Qiymət: Yuxarıdan Aşağı</option>
-                                                  <option value="popular">Ən Populyar</option>
-                                        </select>
-
-                                        <div
-                                                  class="flex gap-1 border border-gray-300 dark:border-gray-700 rounded-full p-1">
-                                                  <button onclick="setGridView(2)"
-                                                            class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                                                            id="grid2">
-                                                            <i data-lucide="layout-grid" class="w-4 h-4"></i>
-                                                  </button>
-                                                  <button onclick="setGridView(4)"
-                                                            class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-colors"
-                                                            id="grid4">
-                                                            <i data-lucide="grid-2x2" class="w-4 h-4"></i>
-                                                  </button>
-                                        </div>
-                              </div>
-                    </div>
-          </section>
-
-          <!-- Products Section -->
-          <section id="collection" class="py-16 bg-gray-50 dark:bg-fashion-gray/30">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                              <div class="flex justify-between items-end mb-12">
-                                        <div>
-                                                  <h2 class="font-serif text-4xl md:text-5xl font-light italic mb-2">
-                                                            Yeni Gələnlər</h2>
-                                                  <p class="text-gray-500">Bu həftənin seçilmiş parçaları</p>
-                                        </div>
-                                        <div class="hidden md:flex items-center gap-2 text-sm text-gray-500">
-                                                  <span id="showingCount">12</span> məhsul göstərilir
-                                        </div>
-                              </div>
-
-                              <div id="productsGrid"
-                                        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-                                        <!-- Products injected by JS -->
-                              </div>
-
-                              <div class="text-center mt-16">
-                                        <button onclick="loadMore()"
-                                                  class="group px-8 py-4 border-2 border-fashion-black dark:border-white rounded-full font-medium hover:bg-fashion-black hover:text-white dark:hover:bg-white dark:hover:text-fashion-black transition-all duration-300 flex items-center gap-2 mx-auto">
-                                                  Daha Çox Göstər
-                                                  <i data-lucide="chevron-down"
-                                                            class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
-                                        </button>
-                              </div>
-                    </div>
-          </section>
-
-          <!-- Lookbook Section -->
-          <section class="py-24 bg-fashion-black text-white overflow-hidden">
-                    <div class="max-w-7xl mx-auto px-4">
-                              <div class="text-center mb-16">
-                                        <span class="text-luxury-gold text-sm tracking-widest uppercase">2026
-                                                  Lookbook</span>
-                                        <h2 class="font-serif text-4xl md:text-6xl font-light mt-4">Həftənin Setləri
-                                        </h2>
-                              </div>
-
-                              <div class="flex gap-4 h-[600px] overflow-hidden rounded-2xl">
-                                        <div class="lookbook-item flex-1 relative overflow-hidden cursor-pointer group">
-                                                  <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80"
-                                                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                                                  <div
-                                                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                                                            <p class="text-luxury-gold text-sm mb-2">Ofis Şıqlığı</p>
-                                                            <h3 class="font-serif text-2xl italic">Power Suit</h3>
-                                                            <button onclick="shopLook(1)"
-                                                                      class="mt-4 px-6 py-2 bg-white text-fashion-black rounded-full text-sm font-medium hover:bg-luxury-gold transition-colors w-fit">
-                                                                      Seti Al
-                                                            </button>
-                                                  </div>
-                                        </div>
-                                        <div class="lookbook-item flex-1 relative overflow-hidden cursor-pointer group">
-                                                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&q=80"
-                                                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                                                  <div
-                                                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                                                            <p class="text-luxury-gold text-sm mb-2">Yay Axşamı</p>
-                                                            <h3 class="font-serif text-2xl italic">Silk Dreams</h3>
-                                                            <button onclick="shopLook(2)"
-                                                                      class="mt-4 px-6 py-2 bg-white text-fashion-black rounded-full text-sm font-medium hover:bg-luxury-gold transition-colors w-fit">
-                                                                      Seti Al
-                                                            </button>
-                                                  </div>
-                                        </div>
-                                        <div
-                                                  class="lookbook-item flex-1 relative overflow-hidden cursor-pointer group hidden md:block">
-                                                  <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&q=80"
-                                                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                                                  <div
-                                                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                                                            <p class="text-luxury-gold text-sm mb-2">Street Style</p>
-                                                            <h3 class="font-serif text-2xl italic">Urban Edge</h3>
-                                                            <button onclick="shopLook(3)"
-                                                                      class="mt-4 px-6 py-2 bg-white text-fashion-black rounded-full text-sm font-medium hover:bg-luxury-gold transition-colors w-fit">
-                                                                      Seti Al
-                                                            </button>
-                                                  </div>
-                                        </div>
-                              </div>
-                    </div>
-          </section>
-
-          <!-- Sustainability Banner -->
-          <section class="py-20 bg-sustainable-green/10">
-                    <div class="max-w-7xl mx-auto px-4">
-                              <div
-                                        class="glass-luxury rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 border border-sustainable-green/30">
-                                        <div class="flex-1">
-                                                  <div class="flex items-center gap-2 mb-4">
-                                                            <div
-                                                                      class="sustainability-badge text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
-                                                                      <i data-lucide="leaf" class="w-3 h-3"></i>
-                                                                      SUSTAINABLE
-                                                            </div>
-                                                  </div>
-                                                  <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">Moda
-                                                            Dəyişiklik Yarada Bilər</h2>
-                                                  <p class="text-gray-600 dark:text-gray-300 mb-6 max-w-xl">
-                                                            Hər bir sustainable məhsul alışında 10 ağac əkilir. 2026-cı
-                                                            ilədək karbon-neqativ olmaq missiyamızdır.
-                                                  </p>
-                                                  <div class="flex flex-wrap gap-4">
-                                                            <div class="flex items-center gap-2">
-                                                                      <div
-                                                                                class="w-12 h-12 rounded-full bg-white dark:bg-fashion-gray flex items-center justify-center">
-                                                                                <span
-                                                                                          class="font-bold text-sustainable-green">50k</span>
-                                                                      </div>
-                                                                      <div class="text-sm">
-                                                                                <div class="font-bold">Ağac əkilib</div>
-                                                                                <div class="text-gray-500">2024-cü ildən
-                                                                                          bəri</div>
-                                                                      </div>
-                                                            </div>
-                                                            <div class="flex items-center gap-2">
-                                                                      <div
-                                                                                class="w-12 h-12 rounded-full bg-white dark:bg-fashion-gray flex items-center justify-center">
-                                                                                <span
-                                                                                          class="font-bold text-sustainable-green">85%</span>
-                                                                      </div>
-                                                                      <div class="text-sm">
-                                                                                <div class="font-bold">Eko materiallar
-                                                                                </div>
-                                                                                <div class="text-gray-500">
-                                                                                          Kolleksiyamızda</div>
-                                                                      </div>
-                                                            </div>
-                                                  </div>
-                                        </div>
-                                        <div class="w-full md:w-1/3">
-                                                  <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&q=80"
-                                                            alt="Sustainable Fashion" class="rounded-2xl shadow-2xl">
-                                        </div>
-                              </div>
-                    </div>
-          </section>
-
-          <!-- Cart Drawer -->
-          <div id="cartDrawer"
-                    class="cart-drawer fixed top-0 right-0 h-full w-full md:w-[480px] bg-white dark:bg-fashion-gray shadow-2xl z-50 border-l border-gray-200 dark:border-gray-800 flex flex-col">
-                    <div
-                              class="p-6 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center glass-luxury">
-                              <div>
-                                        <h2 class="font-serif text-2xl font-bold">Səbətiniz</h2>
-                                        <p class="text-sm text-gray-500 mt-1"><span id="cartItemCount">0</span> məhsul
-                                        </p>
-                              </div>
-                              <button onclick="toggleCart()"
-                                        class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
-                                        <i data-lucide="x" class="w-6 h-6"></i>
-                              </button>
-                    </div>
-
-                    <div id="cartItems" class="flex-1 overflow-y-auto p-6 space-y-4">
-                              <div class="flex flex-col items-center justify-center h-full text-gray-400">
-                                        <div
-                                                  class="w-24 h-24 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-4">
-                                                  <i data-lucide="shopping-bag" class="w-10 h-10 opacity-30"></i>
-                                        </div>
-                                        <p>Səbətiniz boşdur</p>
-                                        <button onclick="toggleCart(); scrollToCollection()"
-                                                  class="mt-4 text-luxury-gold hover:underline font-medium">Alış-verişə
-                                                  başla</button>
-                              </div>
-                    </div>
-
-                    <div
-                              class="p-6 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 space-y-4">
-                              <div class="space-y-2 text-sm">
-                                        <div class="flex justify-between text-gray-600 dark:text-gray-400">
-                                                  <span>Ara cəmi</span>
-                                                  <span id="cartSubtotal">0 ₼</span>
-                                        </div>
-                                        <div class="flex justify-between text-gray-600 dark:text-gray-400">
-                                                  <span>Çatdırılma</span>
-                                                  <span id="cartShipping">Hesablanır...</span>
-                                        </div>
-                                        <div class="flex justify-between text-sustainable-green font-medium"
-                                                  id="ecoDiscount" style="display: none;">
-                                                  <span class="flex items-center gap-1">
-                                                            <i data-lucide="leaf" class="w-4 h-4"></i>
-                                                            Eko endirim
-                                                  </span>
-                                                  <span>-15 ₼</span>
-                                        </div>
-                              </div>
-
-                              <div class="border-t border-gray-300 dark:border-gray-700 pt-4">
-                                        <div class="flex justify-between items-center mb-4">
-                                                  <span class="font-bold text-lg">Cəmi</span>
-                                                  <span id="cartTotal"
-                                                            class="font-serif text-2xl font-bold text-luxury-gold">0
-                                                            ₼</span>
-                                        </div>
-
-                                        <button onclick="checkout()"
-                                                  class="w-full py-4 bg-fashion-black text-white rounded-full font-medium hover:bg-luxury-gold transition-colors flex items-center justify-center gap-2 group">
-                                                  <span>Sifarişi Tamamla</span>
-                                                  <i data-lucide="arrow-right"
-                                                            class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                                        </button>
-
-                                        <p
-                                                  class="text-xs text-center text-gray-500 mt-3 flex items-center justify-center gap-1">
-                                                  <i data-lucide="lock" class="w-3 h-3"></i>
-                                                  Təhlükəsiz ödəniş • SSL şifrələmə
-                                        </p>
-                              </div>
-                    </div>
+          <div class="quick-bets">
+            <button class="quick-bet" onclick="setBet(10)">10</button>
+            <button class="quick-bet" onclick="setBet(25)">25</button>
+            <button class="quick-bet" onclick="setBet(50)">50</button>
+            <button class="quick-bet" onclick="setBet(100)">100</button>
+            <button class="quick-bet" onclick="setBet(500)">MAX</button>
           </div>
-          <div id="cartOverlay" onclick="toggleCart()"
-                    class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity"></div>
+        </div>
 
-          <!-- Product Quick View Modal -->
-          <div id="productModal"
-                    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-                    <div class="bg-white dark:bg-fashion-gray rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300"
-                              id="productModalContent">
-                              <button onclick="closeProductModal()"
-                                        class="absolute top-4 right-4 z-10 p-2 bg-white/80 dark:bg-black/80 rounded-full hover:bg-luxury-gold transition-colors">
-                                        <i data-lucide="x" class="w-6 h-6"></i>
-                              </button>
+        <div class="spin-section">
+          <button class="spin-btn" id="spinBtn" onclick="spin()">SPIN</button>
+        </div>
 
-                              <div class="grid md:grid-cols-2 gap-0" id="productModalBody">
-                                        <!-- Injected by JS -->
-                              </div>
-                    </div>
+        <div class="info-panel">
+          <div class="info-row">
+            <span class="info-label">Fırlatmalar:</span>
+            <span class="info-value" id="totalSpins">0</span>
           </div>
-
-          <!-- Notification Toast -->
-          <div id="notification"
-                    class="notification-toast fixed top-24 right-4 z-50 bg-fashion-black text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 max-w-sm">
-                    <div class="w-10 h-10 rounded-full bg-luxury-gold/20 flex items-center justify-center">
-                              <i data-lucide="check" class="w-5 h-5 text-luxury-gold"></i>
-                    </div>
-                    <div>
-                              <p class="font-medium" id="notificationTitle">Səbətə əlavə edildi</p>
-                              <p class="text-sm text-gray-400" id="notificationText">Silk Summer Dress</p>
-                    </div>
+          <div class="info-row">
+            <span class="info-label">Qələbələr:</span>
+            <span class="info-value" id="totalWins">0</span>
           </div>
+          <div class="info-row">
+            <span class="info-label"> RTP:</span>
+            <span class="info-value">96.5%</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          <!-- Footer -->
-          <footer class="bg-fashion-black text-white pt-20 pb-8">
-                    <div class="max-w-7xl mx-auto px-4">
-                              <div class="grid md:grid-cols-4 gap-12 mb-16">
-                                        <div>
-                                                  <span
-                                                            class="font-serif text-3xl italic font-bold text-luxury-gradient">VOGUE
-                                                            X</span>
-                                                  <p class="mt-4 text-gray-400 text-sm leading-relaxed">
-                                                            2026-cı ilin premium moda evi. Sürdürülebilir lüks və müasir
-                                                            dizaynın birləşməsi.
-                                                  </p>
-                                                  <div class="flex gap-4 mt-6">
-                                                            <a href="#"
-                                                                      class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-luxury-gold hover:text-luxury-gold transition-colors">
-                                                                      <i data-lucide="instagram" class="w-5 h-5"></i>
-                                                            </a>
-                                                            <a href="#"
-                                                                      class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-luxury-gold hover:text-luxury-gold transition-colors">
-                                                                      <i data-lucide="facebook" class="w-5 h-5"></i>
-                                                            </a>
-                                                            <a href="#"
-                                                                      class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-luxury-gold hover:text-luxury-gold transition-colors">
-                                                                      <i data-lucide="twitter" class="w-5 h-5"></i>
-                                                            </a>
-                                                  </div>
-                                        </div>
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button class="action-btn" onclick="togglePaytable()">📜 Cədvəl</button>
+      <button class="action-btn" onclick="toggleSound()">🔊 Səs</button>
+      <button class="action-btn" onclick="resetGame()">🔄 Yeni Oyun</button>
+      <button class="action-btn" onclick="addCredits()">💳 Kredit Əlavə Et</button>
+    </div>
+  </div>
 
-                                        <div>
-                                                  <h4 class="font-bold mb-6 text-sm tracking-widest uppercase">
-                                                            Alış-Veriş</h4>
-                                                  <ul class="space-y-3 text-sm text-gray-400">
-                                                            <li><a href="#" class="hover:text-white transition-colors">Yeni
-                                                                                Gələnlər</a></li>
-                                                            <li><a href="#"
-                                                                                class="hover:text-white transition-colors">Trendlər</a>
-                                                            </li>
-                                                            <li><a href="#"
-                                                                                class="hover:text-white transition-colors">Endirimlər</a>
-                                                            </li>
-                                                            <li><a href="#"
-                                                                                class="hover:text-white transition-colors">Eksklüziv</a>
-                                                            </li>
-                                                  </ul>
-                                        </div>
+  <script>
+    // ==================== REAL CASINO CONFIGURATION ====================
 
-                                        <div>
-                                                  <h4 class="font-bold mb-6 text-sm tracking-widest uppercase">Kömək
-                                                  </h4>
-                                                  <ul class="space-y-3 text-sm text-gray-400">
-                                                            <li><a href="#" class="hover:text-white transition-colors">Ölçü
-                                                                                Cədvəli</a></li>
-                                                            <li><a href="#"
-                                                                                class="hover:text-white transition-colors">Çatdırılma</a>
-                                                            </li>
-                                                            <li><a href="#"
-                                                                                class="hover:text-white transition-colors">Qaytarma</a>
-                                                            </li>
-                                                            <li><a href="#" class="hover:text-white transition-colors">Tez-tez
-                                                                                Suallar</a></li>
-                                                  </ul>
-                                        </div>
+    // Symbol definitions with real casino odds
+    const SYMBOLS = {
+      SEVEN: { id: '7', emoji: '7️⃣', name: 'Seven', value: 100, weight: 2, type: 'jackpot' },
+      DIAMOND: { id: 'D', emoji: '💎', name: 'Diamond', value: 50, weight: 4, type: 'high' },
+      BAR: { id: 'B', emoji: '🎰', name: 'Bar', value: 30, weight: 6, type: 'high' },
+      BELL: { id: 'BE', emoji: '🔔', name: 'Bell', value: 20, weight: 8, type: 'medium' },
+      WATERMELON: { id: 'W', emoji: '🍉', name: 'Melon', value: 15, weight: 10, type: 'medium' },
+      GRAPE: { id: 'G', emoji: '🍇', name: 'Grape', value: 10, weight: 12, type: 'low' },
+      ORANGE: { id: 'O', emoji: '🍊', name: 'Orange', value: 8, weight: 14, type: 'low' },
+      LEMON: { id: 'L', emoji: '🍋', name: 'Lemon', value: 5, weight: 16, type: 'low' },
+      CHERRY: { id: 'C', emoji: '🍒', name: 'Cherry', value: 3, weight: 18, type: 'low' },
+      WILD: { id: 'WILD', emoji: '⭐', name: 'Wild', value: 0, weight: 3, type: 'special', isWild: true },
+      SCATTER: { id: 'SCAT', emoji: '💰', name: 'Scatter', value: 0, weight: 2, type: 'special', isScatter: true, freeSpins: 10 }
+    };
 
-                                        <div>
-                                                  <h4 class="font-bold mb-6 text-sm tracking-widest uppercase">Əlaqə
-                                                  </h4>
-                                                  <ul class="space-y-3 text-sm text-gray-400">
-                                                            <li class="flex items-center gap-2">
-                                                                      <i data-lucide="map-pin" class="w-4 h-4"></i>
-                                                                      Nizami küç. 45, Bakı
-                                                            </li>
-                                                            <li class="flex items-center gap-2">
-                                                                      <i data-lucide="phone" class="w-4 h-4"></i>
-                                                                      +994 12 345 67 89
-                                                            </li>
-                                                            <li class="flex items-center gap-2">
-                                                                      <i data-lucide="mail" class="w-4 h-4"></i>
-                                                                      style@voguex.az
-                                                            </li>
-                                                  </ul>
-                                        </div>
-                              </div>
+    // Reel strips (physical slot machine layout)
+    const REEL_STRIPS = [
+      ['CHERRY', 'LEMON', 'ORANGE', 'GRAPE', 'WATERMELON', 'BELL', 'BAR', 'DIAMOND', 'SEVEN', 'WILD', 'CHERRY', 'LEMON', 'ORANGE', 'SCATTER', 'GRAPE', 'BELL', 'BAR', 'WATERMELON', 'DIAMOND', 'SEVEN'],
+      ['SEVEN', 'CHERRY', 'LEMON', 'ORANGE', 'GRAPE', 'WATERMELON', 'BELL', 'BAR', 'DIAMOND', 'CHERRY', 'WILD', 'LEMON', 'ORANGE', 'GRAPE', 'SCATTER', 'WATERMELON', 'BELL', 'BAR', 'DIAMOND', 'CHERRY'],
+      ['DIAMOND', 'SEVEN', 'CHERRY', 'LEMON', 'ORANGE', 'GRAPE', 'WATERMELON', 'BELL', 'BAR', 'WILD', 'CHERRY', 'LEMON', 'ORANGE', 'GRAPE', 'WATERMELON', 'SCATTER', 'BELL', 'BAR', 'DIAMOND', 'SEVEN']
+    ];
 
-                              <div
-                                        class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-                                        <p>&copy; 2026 VOGUE X. Bütün hüquqlar qorunur.</p>
-                                        <div class="flex gap-6">
-                                                  <a href="#" class="hover:text-white transition-colors">Məxfilik</a>
-                                                  <a href="#" class="hover:text-white transition-colors">Şərtlər</a>
-                                                  <a href="#" class="hover:text-white transition-colors">Kuki</a>
-                                        </div>
-                              </div>
-                    </div>
-          </footer>
+    // ==================== GAME STATE ====================
 
-          <script src="script.js">
-                   
-          </script>
+    const GameState = {
+      balance: 1000,
+      bet: 10,
+      minBet: 10,
+      maxBet: 1000,
+      totalSpins: 0,
+      totalWins: 0,
+      lastWin: 0,
+      isSpinning: false,
+      soundEnabled: true,
+      freeSpins: 0,
+      currentResults: [null, null, null]
+    };
+
+    // ==================== AUDIO SYSTEM ====================
+
+    const AudioSys = {
+      ctx: null,
+
+      init() {
+        this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+      },
+
+      play(type) {
+        if (!GameState.soundEnabled || !this.ctx) return;
+        if (this.ctx.state === 'suspended') this.ctx.resume();
+
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        const now = this.ctx.currentTime;
+
+        switch (type) {
+          case 'spin':
+            osc.frequency.setValueAtTime(200, now);
+            osc.frequency.exponentialRampToValueAtTime(800, now + 0.1);
+            gain.gain.setValueAtTime(0.3, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
+            osc.start(now);
+            osc.stop(now + 0.15);
+            break;
+
+          case 'stop':
+            osc.frequency.setValueAtTime(400, now);
+            osc.frequency.exponentialRampToValueAtTime(100, now + 0.1);
+            gain.gain.setValueAtTime(0.2, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.1);
+            osc.start(now);
+            osc.stop(now + 0.1);
+            break;
+
+          case 'win':
+            // Arpeggio
+            [440, 554, 659, 880].forEach((freq, i) => {
+              const o = this.ctx.createOscillator();
+              const g = this.ctx.createGain();
+              o.connect(g);
+              g.connect(this.ctx.destination);
+              o.frequency.value = freq;
+              g.gain.setValueAtTime(0.2, now + i * 0.1);
+              g.gain.exponentialRampToValueAtTime(0.01, now + i * 0.1 + 0.3);
+              o.start(now + i * 0.1);
+              o.stop(now + i * 0.1 + 0.3);
+            });
+            break;
+
+          case 'bigwin':
+            for (let i = 0; i < 5; i++) {
+              setTimeout(() => this.play('win'), i * 200);
+            }
+            break;
+
+          case 'jackpot':
+            const notes = [440, 554, 659, 880, 1109, 1319, 1760];
+            notes.forEach((freq, i) => {
+              const o = this.ctx.createOscillator();
+              const g = this.ctx.createGain();
+              o.connect(g);
+              g.connect(this.ctx.destination);
+              o.frequency.value = freq;
+              g.gain.setValueAtTime(0.3, now + i * 0.05);
+              g.gain.exponentialRampToValueAtTime(0.01, now + i * 0.05 + 0.2);
+              o.start(now + i * 0.05);
+              o.stop(now + i * 0.05 + 0.2);
+            });
+            break;
+        }
+      }
+    };
+
+    // ==================== INITIALIZATION ====================
+
+    function init() {
+      AudioSys.init();
+      renderReelStrips();
+      renderPaytable();
+      updateDisplay();
+
+      // Initialize reels with random positions
+      for (let i = 0; i < 3; i++) {
+        spinReelVisual(i, Math.floor(Math.random() * 20), 0);
+      }
+    }
+
+    function renderReelStrips() {
+      for (let reelIdx = 0; reelIdx < 3; reelIdx++) {
+        const strip = document.getElementById(`reel${reelIdx + 1}`);
+        strip.innerHTML = '';
+
+        // Create extended strip for seamless looping
+        const extendedStrip = [...REEL_STRIPS[reelIdx], ...REEL_STRIPS[reelIdx], ...REEL_STRIPS[reelIdx]];
+
+        extendedStrip.forEach((symKey, pos) => {
+          const symbol = SYMBOLS[symKey];
+          const div = document.createElement('div');
+          div.className = 'symbol';
+          if (symbol.isWild) div.classList.add('wild');
+          if (symbol.isScatter) div.classList.add('scatter');
+          div.textContent = symbol.emoji;
+          div.dataset.symbol = symKey;
+          div.dataset.position = pos % 20;
+          strip.appendChild(div);
+        });
+      }
+    }
+
+    function renderPaytable() {
+      const grid = document.getElementById('paytableGrid');
+      const symbolList = Object.values(SYMBOLS).filter(s => !s.isWild && !s.isScatter);
+
+      grid.innerHTML = symbolList.map(s => `
+                <div class="paytable-row">
+                    <div class="paytable-symbol">${s.emoji}</div>
+                    <div class="paytable-name">${s.name}</div>
+                    <div class="paytable-odds">3× = ${s.value}x</div>
+                </div>
+            `).join('') + `
+                <div class="paytable-row">
+                    <div class="paytable-symbol">⭐</div>
+                    <div class="paytable-name">Wild (Əvəz edir)</div>
+                    <div class="paytable-odds">2x Multiplier</div>
+                </div>
+                <div class="paytable-row">
+                    <div class="paytable-symbol">💰</div>
+                    <div class="paytable-name">Scatter (Bonus)</div>
+                    <div class="paytable-odds">3× = 10 Free Spin</div>
+                </div>
+            `;
+    }
+
+    // ==================== GAME LOGIC ====================
+
+    function spinReelVisual(reelIdx, finalPosition, duration) {
+      const strip = document.getElementById(`reel${reelIdx + 1}`);
+      const symbolHeight = 200;
+      const totalSymbols = 20;
+
+      // Calculate position to show the target symbol in center
+      // We need to account for the tripled strip
+      const offset = (finalPosition + 20) * symbolHeight; // +20 for middle section
+
+      strip.style.transition = duration > 0 ? `transform ${duration}ms cubic-bezier(0.25, 0.1, 0.25, 1)` : 'none';
+      strip.style.transform = `translateY(-${offset}px)`;
+
+      return finalPosition;
+    }
+
+    function generateResult() {
+      // Real RNG - each reel stops at random position
+      const results = [];
+      for (let i = 0; i < 3; i++) {
+        const position = Math.floor(Math.random() * 20);
+        const symbolKey = REEL_STRIPS[i][position];
+        results.push({
+          position: position,
+          symbol: SYMBOLS[symbolKey],
+          key: symbolKey
+        });
+      }
+      return results;
+    }
+
+    async function spin() {
+      if (GameState.isSpinning) return;
+
+      const cost = GameState.freeSpins > 0 ? 0 : GameState.bet;
+      if (GameState.balance < cost) {
+        alert('💳 Kifayət qədər balans yoxdur!\n"Kredit Əlavə Et" düyməsini basın.');
+        return;
+      }
+
+      // Deduct bet
+      if (GameState.freeSpins > 0) {
+        GameState.freeSpins--;
+      } else {
+        GameState.balance -= cost;
+      }
+
+      GameState.isSpinning = true;
+      GameState.totalSpins++;
+      updateDisplay();
+
+      // UI updates
+      document.getElementById('spinBtn').disabled = true;
+      document.getElementById('spinBtn').classList.add('spinning');
+      hidePaylines();
+      AudioSys.play('spin');
+
+      // Generate result immediately (server-side logic)
+      const results = generateResult();
+      GameState.currentResults = results;
+
+      // Animate reels with different durations
+      const spinDurations = [2000, 2500, 3000];
+
+      for (let i = 0; i < 3; i++) {
+        setTimeout(() => {
+          spinReelVisual(i, results[i].position, spinDurations[i]);
+        }, i * 200);
+      }
+
+      // Wait for all reels to stop
+      await new Promise(r => setTimeout(r, 3200));
+
+      // Stop sound
+      AudioSys.play('stop');
+
+      // Calculate win
+      const win = calculateWin(results);
+
+      if (win.amount > 0) {
+        await handleWin(win, results);
+      }
+
+      // Check scatters
+      const scatters = results.filter(r => r.symbol.isScatter).length;
+      if (scatters >= 3) {
+        GameState.freeSpins += 10;
+        showWinOverlay(0, '10 FREE SPINS!', 'scatter');
+      }
+
+      // Reset UI
+      GameState.isSpinning = false;
+      document.getElementById('spinBtn').disabled = false;
+      document.getElementById('spinBtn').classList.remove('spinning');
+      updateDisplay();
+    }
+
+    function calculateWin(results) {
+      const [r1, r2, r3] = results;
+      const symbols = [r1.symbol, r2.symbol, r3.symbol];
+
+      let winAmount = 0;
+      let winType = '';
+      let multiplier = 1;
+
+      // Count wilds
+      const wildCount = symbols.filter(s => s.isWild).length;
+
+      // Three of a kind (including wild substitutions)
+      let matchedSymbol = null;
+
+      if (r1.key === r2.key && r2.key === r3.key && !r1.symbol.isWild) {
+        // Exact match
+        matchedSymbol = r1.symbol;
+      } else if (wildCount > 0) {
+        // Wild substitution logic
+        const nonWilds = symbols.filter(s => !s.isWild);
+        if (nonWilds.length === 0) {
+          // All wilds - count as highest value
+          matchedSymbol = SYMBOLS.SEVEN;
+          multiplier = 2;
+        } else if (nonWilds.length === 1) {
+          // Two wilds + one symbol = three of that symbol
+          matchedSymbol = nonWilds[0];
+          multiplier = 2;
+        } else if (nonWilds.length === 2 && nonWilds[0].id === nonWilds[1].id) {
+          // One wild + two matching = three of that symbol
+          matchedSymbol = nonWilds[0];
+          multiplier = 2;
+        }
+      }
+
+      if (matchedSymbol && !matchedSymbol.isScatter) {
+        winAmount = GameState.bet * matchedSymbol.value * multiplier;
+        winType = matchedSymbol.type === 'jackpot' ? 'JACKPOT' :
+          matchedSymbol.type === 'high' ? 'BIG_WIN' : 'WIN';
+      }
+
+      // Two cherries special payout
+      if (winAmount === 0) {
+        const cherryCount = symbols.filter(s => s.id === 'C').length;
+        if (cherryCount >= 2) {
+          winAmount = GameState.bet * 2;
+          winType = 'WIN';
+        }
+      }
+
+      // Random jackpot chance (0.1%)
+      if (Math.random() < 0.001) {
+        winAmount = GameState.balance * 10;
+        winType = 'MEGA_JACKPOT';
+      }
+
+      return {
+        amount: winAmount,
+        type: winType,
+        multiplier: multiplier,
+        symbol: matchedSymbol
+      };
+    }
+
+    async function handleWin(win, results) {
+      GameState.balance += win.amount;
+      GameState.lastWin = win.amount;
+      GameState.totalWins++;
+
+      // Show payline
+      document.getElementById('paylineMiddle').classList.add('active');
+
+      // Play sound
+      if (win.type === 'MEGA_JACKPOT' || win.type === 'JACKPOT') {
+        AudioSys.play('jackpot');
+      } else if (win.type === 'BIG_WIN') {
+        AudioSys.play('bigwin');
+      } else {
+        AudioSys.play('win');
+      }
+
+      // Animate credit counter
+      animateCreditCounter(GameState.balance - win.amount, GameState.balance);
+
+      // Show win overlay
+      await new Promise(r => setTimeout(r, 500));
+      showWinOverlay(win.amount, win.type, win.symbol);
+    }
+
+    function animateCreditCounter(start, end) {
+      const el = document.getElementById('balanceDisplay');
+      const duration = 1000;
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(start + (end - start) * easeProgress);
+
+        el.textContent = current.toLocaleString();
+        el.classList.add('win');
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          el.classList.remove('win');
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    function showWinOverlay(amount, type, symbol) {
+      const overlay = document.getElementById('winOverlay');
+      const title = document.getElementById('winTitle');
+      const amt = document.getElementById('winAmount');
+      const mult = document.getElementById('winMultiplier');
+
+      const titles = {
+        'MEGA_JACKPOT': '🎰 MEGA JACKPOT! 🎰',
+        'JACKPOT': '💎 JACKPOT! 💎',
+        'BIG_WIN': '🔥 BIG WIN! 🔥',
+        'WIN': '✨ WIN! ✨',
+        'scatter': '🎁 BONUS! 🎁'
+      };
+
+      title.textContent = titles[type] || 'WIN!';
+      amt.textContent = amount > 0 ? '+' + amount.toLocaleString() : '';
+      mult.textContent = symbol ? `${symbol.emoji} ${symbol.name}` : '';
+
+      overlay.classList.add('show');
+    }
+
+    function closeWin() {
+      document.getElementById('winOverlay').classList.remove('show');
+      hidePaylines();
+    }
+
+    function hidePaylines() {
+      document.querySelectorAll('.payline-indicator').forEach(p => p.classList.remove('active'));
+    }
+
+    // ==================== CONTROLS ====================
+
+    function changeBet(direction) {
+      if (GameState.isSpinning) return;
+
+      const steps = [10, 25, 50, 100, 250, 500, 1000];
+      const currentIdx = steps.indexOf(GameState.bet);
+      const newIdx = currentIdx + direction;
+
+      if (newIdx >= 0 && newIdx < steps.length) {
+        setBet(steps[newIdx]);
+      }
+    }
+
+    function setBet(amount) {
+      if (GameState.isSpinning) return;
+      if (amount > GameState.balance) amount = GameState.balance;
+      if (amount < GameState.minBet) amount = GameState.minBet;
+
+      GameState.bet = amount;
+      updateDisplay();
+
+      // Update active quick bet button
+      document.querySelectorAll('.quick-bet').forEach(btn => {
+        btn.classList.toggle('active', parseInt(btn.textContent) === amount ||
+          (btn.textContent === 'MAX' && amount === GameState.maxBet));
+      });
+    }
+
+    function togglePaytable() {
+      document.getElementById('paytableModal').classList.toggle('show');
+    }
+
+    function toggleSound() {
+      GameState.soundEnabled = !GameState.soundEnabled;
+      event.target.textContent = GameState.soundEnabled ? '🔊 Səs' : '🔇 Səs';
+    }
+
+    function resetGame() {
+      if (!confirm('Yeni oyun başlatmaq istəyirsiniz? Bütün balans sıfırlanacaq.')) return;
+
+      GameState.balance = 1000;
+      GameState.bet = 10;
+      GameState.totalSpins = 0;
+      GameState.totalWins = 0;
+      GameState.lastWin = 0;
+      GameState.freeSpins = 0;
+
+      updateDisplay();
+      hidePaylines();
+    }
+
+    function addCredits() {
+      const amount = prompt('Əlavə etmək istədiyiniz məbləği daxil edin:', '1000');
+      if (amount && !isNaN(amount) && amount > 0) {
+        GameState.balance += parseInt(amount);
+        updateDisplay();
+      }
+    }
+
+    function updateDisplay() {
+      document.getElementById('balanceDisplay').textContent = GameState.balance.toLocaleString();
+      document.getElementById('betDisplay').textContent = GameState.bet;
+      document.getElementById('currentBet').textContent = GameState.bet;
+      document.getElementById('lastWinDisplay').textContent = GameState.lastWin.toLocaleString();
+      document.getElementById('totalSpins').textContent = GameState.totalSpins;
+      document.getElementById('totalWins').textContent = GameState.totalWins;
+
+      // Update button states
+      document.getElementById('btnMinus').disabled = GameState.bet <= GameState.minBet || GameState.isSpinning;
+      document.getElementById('btnPlus').disabled = GameState.bet >= GameState.maxBet || GameState.bet >= GameState.balance || GameState.isSpinning;
+    }
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space') {
+        e.preventDefault();
+        spin();
+      } else if (e.code === 'ArrowUp') {
+        changeBet(1);
+      } else if (e.code === 'ArrowDown') {
+        changeBet(-1);
+      } else if (e.code === 'Escape') {
+        closeWin();
+        document.getElementById('paytableModal').classList.remove('show');
+      }
+    });
+
+    // Start
+    init();
+  </script>
 </body>
 
 </html>
