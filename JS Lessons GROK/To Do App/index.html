@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tapşırıqlar meneceri - Yeni başlayanlar üçün">
+    <title>Tapşırıqlar Meneceri - Yeni Başlayanlar üçün</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Əsas konteyner -->
+    <div class="container">
+
+        <!-- Başlıq hissəsi -->
+        <div class="header"> <!-- header -> div (əgər istəyirsinizsə) -->
+            <h1>📝 Tapşırıqlarım</h1>
+            <p class="subtitle">Gününüzü planlaşdırın</p>
+        </div>
+
+        <!-- Statistika kartları -->
+        <div class="stats">
+            <div class="stat-card">
+                <span class="stat-number" id="totalTasks">0</span>
+                <span class="stat-label">Ümumi</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="completedTasks">0</span>
+                <span class="stat-label">Tamamlanan</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="pendingTasks">0</span>
+                <span class="stat-label">Gözləyən</span>
+            </div>
+        </div>
+
+        <!-- Yeni tapşırıq əlavə etmə formu -->
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Yeni tapşırıq yazın..." class="task-input">
+            <select id="prioritySelect" class="priority-select">
+                <option value="low">🔵 Aşağı</option>
+                <option value="medium" selected>🟡 Orta</option>
+                <option value="high">🔴 Yüksək</option>
+            </select>
+            <button onclick="addTask()" class="add-btn">
+                ➕ Əlavə et
+            </button>
+        </div>
+
+        <!-- Filter düymələri -->
+        <div class="filters">
+            <button onclick="filterTasks('all')" class="filter-btn active" id="filterAll">
+                Hamısı
+            </button>
+            <button onclick="filterTasks('pending')" class="filter-btn" id="filterPending">
+                Gözləyən
+            </button>
+            <button onclick="filterTasks('completed')" class="filter-btn" id="filterCompleted">
+                Tamamlanan
+            </button>
+        </div>
+
+        <!-- Tapşırıqlar siyahısı -->
+        <ul id="taskList" class="task-list">
+            <!-- Tapşırıqlar buraya əlavə olunacaq -->
+        </ul>
+
+        <!-- Boş vəziyyət mesajı -->
+        <div id="emptyMessage" class="empty-message">
+            <p>📭 Hələ heç bir tapşırıq yoxdur</p>
+            <p class="hint">Yuxarıda yeni tapşırıq əlavə edin</p>
+        </div>
+
+        <!-- Təmizlə düyməsi - əlavə div ilə -->
+        <div class="actions">
+            <button onclick="clearAll()" class="clear-btn" id="clearBtn" style="display: none;">
+                🗑️ Hamısını sil
+            </button>
+        </div>
+
+    </div>
+
+    <!-- JavaScript faylı -->
+    <script src="script.js"></script>
+</body>
+
+</html>
