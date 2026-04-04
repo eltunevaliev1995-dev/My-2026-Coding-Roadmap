@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>🇩🇪 Almanca Öyrən - interaktiv dil kursu</title>
+          <meta name="description" content="Alman dilini asanlıqla öyrənin">
+          <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      
+          
+       <!-- Əsas konteyner -->
+       <div class="container"> <!-- Əsas konteyner Baslangici -->
+
+          <!-- Başlıq hissəsi -->
+          <header class="header">
+             <div class="logo">🇩🇪</div>  
+             <h1>Almanca Öyrən</h1>   
+             <p class="subtitle">A1 səviyyəsindən başlayın</p>  
+          </header>
+
+          <!-- Progress bar -->
+          <div class="progress-section"> <!-- Progress bar baslangici  -->
+             <div class="progress-info">
+               <span>Günün irəliləyişi</span>     
+               <span id="progressText">0/10</span>     
+             </div>
+             <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+             </div>
+          </div> <!-- Progress bar bitisi  -->
+
+
+          <!-- Statistika -->
+          <div class="stats"> <!-- stats baslangici  -->
+              <div class="stat-box">
+                <span class="stat-icon">🔥</span>    
+                <span class="stat-value" id="streak">0</span>    
+                <span class="stat-label">Gün ardıcıl</span>    
+              </div> 
+              <div class="stat-box">
+               <span class="stat-icon">⭐</span>
+               <span class="stat-value" id="totalScore">0</span>
+               <span class="stat-label">Xal</span>
+              </div>  
+              <div class="stat-box">
+                <span class="stat-icon">📚</span>    
+                <span class="stat-value" id="learnedWords">0</span>    
+                <span class="stat-label">Söz</span>    
+              </div>
+          </div> <!-- stats bitisi  -->
+
+
+          <!-- Oyun rejimi seçimi -->
+          <div class="mode-selection" id="modeSelection"> <!-- mode-selection baslangici -->
+            <h2>Oyun rejimi seçin</h2>
+            <div class="modes"> <!-- modes baslangici -->
+
+              <button onclick="startGame('translate')" class="mode-btn">
+                    <span class="mode-icon">🔄</span>
+                    <span class="mode-title">Tərcümə</span>
+                    <span class="mode-desc">Almancadan azərbaycanca</span>
+              </button>
+              <button onclick="startGame('listen')" class="mode-btn">
+                    <span class="mode-icon">🎧</span>
+                    <span class="mode-title">Qulaq asma</span>
+                    <span class="mode-desc">Eşit və yaz</span>
+              </button>
+              <button onclick="startGame('match')" class="mode-btn">
+                   <span class="mode-icon">🧩</span> 
+                   <span class="mode-title">Uyğunlaşdır</span> 
+                   <span class="mode-desc">Sözləri birləşdir</span> 
+              </button>
+            </div> <!-- modes bitisi -->
+          </div> <!-- mode-selection bitisi -->
+
+
+          <!-- Oyun bölməsi (gizli başlanğıcda) -->
+          <div class="game-section" id="gameSection" style="display: none;"> <!--game-section baslangici-->
+
+          <!-- Sual kartı -->
+          <div class="question-card"> <!-- question-card Baslangici  -->
+
+               <div class="question-type" id="questionType">Tərcümə edin:</div>
+               <div class="question-word" id="questionWord">Hallo</div>
+               <button onclick="speakWord()" class="speak-btn" id="speakBtn">Dinlə🔊</button>
+
+          </div> <!-- question-card Bitisi  -->
+
+          <!-- Cavab variantları -->
+
+           <div class="answers" id="answers">
+
+            <!-- JavaScript ilə doldurulacaq -->
+
+           </div>
+
+           <!-- Yazı cavabı (qulaq asma rejimi üçün) -->
+          <div class="input-answer" id="inputAnswer" style="display: none;">
+
+            <input type="text" id="textInput" placeholder="Cavabınızı yazın...">
+  
+            <button onclick="checkTextAnswer()" class="check-btn">Yoxla</button>
+          </div>
+
+          <!-- Geribildirim -->
+          <div class="feedback" id="feedback"></div>
+          </div> <!--game-section bitisi-->
+
+          <!-- Nəticə bölməsi -->
+          <div class="result-section" id="resultSection" style="display: none;"> <!-- result-section baslangici  -->
+ 
+              
+            <div class="result-icon">🎉</div>
+            <h2>Təbriklər!</h2>
+            <p class="result-text">Bugünkü dərsi tamamladınız</p>
+            <div class="result-stats"> <!-- result-stats baslangici -->
+               <div class="result-stat">
+                  <span>✅ Doğru cavab:</span>
+                  <span id="correctCount">0</span>
+               </div>
+               <div class="result-stat">
+                  <span>❌ Səhv cavab:</span>
+                  <span id="wrongCount">0</span>
+               </div>
+               <div class="result-stat">
+                  <span>🏆 Qazanılan xal:</span>
+                  <span id="earnedPoints">0</span>
+               </div>
+            </div> <!-- result-stats bitisi -->
+            <button onclick="resetGame()" class="restart-btn">Yenidən başla</button>
+          </div> <!-- result-section bitisi  -->
+
+          <!-- Sözlük bölməsi -->
+          <div class="dictionary-section">
+
+             <h3>📖 Öyrəndiyiniz sözlər</h3>
+             <div class="word-list" id="wordList">
+                 <p class="empty-dict">Hələ heç bir söz öyrənməmisiniz</p>
+             </div>
+
+          </div>
+
+       </div> <!-- Əsas konteyner Baslangici -->
+
+
+<script src="script.js"></script>          
+</body>
+</html>
