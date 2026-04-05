@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>❌⭕ X/O Oyunu</title>
+          <meta name="description" content="X/O oyunu - Kompüterə qarşı və ya dostunuzla oynayın">
+          <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+        
+      
+      <div class="container"> <!-- container baslangici  -->
+            <header>
+                
+                <h1>❌ ⭕ Oyunu</h1> 
+                <p class="subtitle">3 eyni simvolu yan-yana gətirin!</p>    
+
+            </header>
+
+          <!-- Oyun rejimi seçimi -->
+          <div class="mode-selection" id="modeSelection"> <!-- mode-selection baslangici  -->
+              <h2>Kimlə oynamaq istəyirsiniz?</h2> 
+              <div class="mode-buttons">
+                    <button onclick="startGame('friend')" class="mode-btn">
+                          <span class="mode-icon">👥</span>      
+                          <span class="mode-text">Dostumla</span>      
+                    </button>
+                    <button onclick="startGame('computer')" class="mode-btn">
+                         <span class="mode-icon">🤖</span> 
+                         <span class="mode-text">Kompüterlə</span>    
+                    </button>
+              </div>        
+          </div> <!-- mode-selection bitisi  -->
+
+          <!-- Oyun bölməsi (başlanğıcda gizli) -->
+          <div class="game-section" id="gameSection" style="display: none;"> <!-- game-section bitisi -->
+
+          <!-- Oyun statusu -->
+          <div class="status-bar">
+              <div class="current-player" id="currentPlayer">
+                 Sıra: <span class="player-x">❌</span>
+              </div>
+              <button onclick="resetGame()" class="reset-btn">🔄 Yenidən</button>      
+          </div>
+
+          <!-- Oyun lövhəsi -->
+          <div class="game-board" id="gameBoard">
+          <!-- 9 xana (JavaScript ilə doldurulacaq) -->
+              <div class="cell" data-index="0"></div>
+              <div class="cell" data-index="1"></div>
+              <div class="cell" data-index="2"></div>
+              <div class="cell" data-index="3"></div>
+              <div class="cell" data-index="4"></div>
+              <div class="cell" data-index="5"></div>
+              <div class="cell" data-index="6"></div>
+              <div class="cell" data-index="7"></div>
+              <div class="cell" data-index="8"></div>
+          </div>
+
+          <!-- Qalib xətti (animasiya üçün) -->
+          <div class="winning-line" id="winningLine"></div>
+
+          <!-- Nəticə mesajı -->
+          <div class="result-message" id="resultMessage"></div>
+
+          </div> <!-- game-section bitisi -->
+     
+          <!-- Xal cədvəli -->
+          <div class="score-board" id="scoreBoard" style="display: none;"> <!-- score-board baslangici -->
+              <div class="score-item">
+                 <span class="score-label">❌ Oyunçu 1</span>
+                 <span class="score-value" id="scoreX">0</span>
+              </div>
+              <div class="score-item">
+                  <span class="score-label">Bərabərlik</span>
+                  <span class="score-value" id="scoreDraw">0</span>
+              </div>
+              <div class="score-item">
+                  <span class="score-label" id="labelO">⭕ Oyunçu 2</span>
+                  <span class="score-value" id="scoreO">0</span>
+              </div>
+          </div> <!-- score-board bitisi -->
+
+          <button onclick="goToMenu()" class="menu-btn" id="menuBtn" style="display: none;">🏠 Ana Menyu
+             
+          </button>
+
+      </div> <!-- container bitisi  -->
+
+          
+         
+<script src="script.js"></script>
+</body>
+</html>
